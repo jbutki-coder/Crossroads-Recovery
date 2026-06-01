@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: crossroads-recovery-app
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: public
