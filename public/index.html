@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crossroads Recovery Community</title>
+  <meta name="description" content="Recovery support, meeting finder, crisis help, daily readings, and Crossroads resources." />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-button" id="homeButton" aria-label="Home">C</button>
+    <img src="/assets/crossroads-logo.jpg" alt="Crossroads Recovery Community" class="logo" />
+    <button class="icon-button" id="menuButton" aria-label="Open menu">☰</button>
+  </header>
+
+  <main id="app" class="app-shell">
+    <section class="hero panel" data-view="home">
+      <img src="/assets/crossroads-logo.jpg" alt="Crossroads Recovery Community" class="hero-logo" />
+      <h1>Recovery help, right when it is needed.</h1>
+      <p class="lead">Use this app to ask for help, submit a concern, find meetings, read recovery literature, and connect with support.</p>
+
+      <div class="quick-grid">
+        <button class="tile urgent" data-go="relapse"><span>I Relapsed</span><small>Get help now</small></button>
+        <button class="tile" data-go="concern"><span>Submit a Concern</span><small>No name required</small></button>
+        <button class="tile" data-go="meetings"><span>Find a Meeting</span><small>NA, AA, ACA, CoDA, SMART</small></button>
+        <button class="tile" data-go="readings"><span>Daily Readings</span><small>JFT, Daily Reflections</small></button>
+        <button class="tile" data-go="library"><span>Recovery Library</span><small>Books and resources</small></button>
+        <button class="tile" data-go="contacts"><span>Contact Leadership</span><small>Call or text support</small></button>
+      </div>
+    </section>
+
+    <section class="panel hidden" data-view="relapse">
+      <button class="back" data-go="home">← Back</button>
+      <h2>I Relapsed / I Need Help Now</h2>
+      <p class="reassure">You are not alone. Ask for help quickly and honestly. Use one of the buttons below to connect with support.</p>
+      <div class="action-stack" id="crisisButtons"></div>
+      <form class="support-form" id="relapseForm">
+        <h3>Ask Crossroads leadership to contact me</h3>
+        <label>Your name or initials <span>optional</span><input name="name" autocomplete="name" /></label>
+        <label>Best phone number <span>optional</span><input name="phone" inputmode="tel" autocomplete="tel" /></label>
+        <label>House / location <input name="house" /></label>
+        <label>What do you need right now?<textarea name="message" rows="4" placeholder="Example: I relapsed and need help getting to detox or treatment."></textarea></label>
+        <button type="submit" class="primary">Send Help Request</button>
+        <p class="fine-print">This form is not for medical emergencies. If someone is in immediate danger, call 911.</p>
+      </form>
+    </section>
+
+    <section class="panel hidden" data-view="concern">
+      <button class="back" data-go="home">← Back</button>
+      <h2>Submit a Concern</h2>
+      <p>You do not have to enter your name. Please be honest and give leadership enough information to check on the situation carefully.</p>
+      <form class="support-form" id="concernForm">
+        <label>House / location <input name="house" placeholder="Example: 924 Wall" required /></label>
+        <label>Type of concern
+          <select name="category" required>
+            <option value="">Choose one</option>
+            <option>Suspected use</option>
+            <option>Drugs or alcohol on property</option>
+            <option>Violence or threats</option>
+            <option>Theft</option>
+            <option>Illegal activity</option>
+            <option>Safety concern</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>What happened?<textarea name="details" rows="5" required></textarea></label>
+        <label>When did it happen? <input name="when" placeholder="Today, last night, exact time if known" /></label>
+        <label>Who should leadership check on? <input name="people" /></label>
+        <label>Your name <span>optional</span><input name="name" /></label>
+        <label>How can leadership contact you? <span>optional</span><input name="contact" /></label>
+        <button type="submit" class="primary">Submit Concern</button>
+        <p class="fine-print">Do not use this form for emergencies. If someone is in immediate danger, call 911.</p>
+      </form>
+    </section>
+
+    <section class="panel hidden" data-view="meetings">
+      <button class="back" data-go="home">← Back</button>
+      <h2>Find a Meeting</h2>
+      <div class="button-list" id="meetingLinks"></div>
+      <div class="iframe-card">
+        <h3>Embedded Meeting Finder</h3>
+        <p class="fine-print">Replace this placeholder in <strong>data/settings.json</strong> with your preferred BMLT or meeting-finder embed URL.</p>
+        <iframe id="meetingFrame" title="Meeting finder" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="panel hidden" data-view="readings">
+      <button class="back" data-go="home">← Back</button>
+      <h2>Daily Readings</h2>
+      <div class="button-list" id="readingLinks"></div>
+      <div class="iframe-card">
+        <h3>Reading Window</h3>
+        <iframe id="readingFrame" title="Daily reading" loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <section class="panel hidden" data-view="library">
+      <button class="back" data-go="home">← Back</button>
+      <h2>Recovery Library</h2>
+      <p class="fine-print">Only use links that Crossroads has permission to share publicly or internally.</p>
+      <div class="resource-list" id="literatureLinks"></div>
+    </section>
+
+    <section class="panel hidden" data-view="contacts">
+      <button class="back" data-go="home">← Back</button>
+      <h2>Contact Leadership</h2>
+      <div class="resource-list" id="contactLinks"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button data-go="home">Home</button>
+    <button data-go="relapse">Help</button>
+    <button data-go="concern">Concern</button>
+    <button data-go="meetings">Meetings</button>
+  </nav>
+
+  <div class="toast hidden" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
