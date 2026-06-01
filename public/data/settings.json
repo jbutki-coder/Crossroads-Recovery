@@ -1,0 +1,123 @@
+{
+  "forms": {
+    "concernEndpoint": "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID",
+    "relapseEndpoint": "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID",
+    "fallbackEmail": "leadership@example.com"
+  },
+  "meetingEmbedUrl": "https://bmlt.app",
+  "crisis": [
+    {
+      "name": "ACCESS",
+      "description": "Call for treatment access and help getting connected.",
+      "phone": "18882254447"
+    },
+    {
+      "name": "FAN / Hope Not Handcuffs",
+      "description": "Call for treatment support and possible transportation help.",
+      "phone": "18332024673"
+    },
+    {
+      "name": "Emergency",
+      "description": "Call 911 if someone is overdosing, violent, or in immediate danger.",
+      "phone": "911"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Jacob",
+      "role": "Leadership",
+      "phone": ""
+    },
+    {
+      "name": "Angela",
+      "role": "Leadership",
+      "phone": ""
+    },
+    {
+      "name": "Richard",
+      "role": "Leadership",
+      "phone": ""
+    },
+    {
+      "name": "Norma",
+      "role": "Leadership",
+      "phone": ""
+    }
+  ],
+  "meetings": [
+    {
+      "name": "NA Meeting Finder",
+      "description": "Find Narcotics Anonymous meetings.",
+      "url": "https://www.na.org/meetingsearch/"
+    },
+    {
+      "name": "AA Meeting Guide",
+      "description": "Find Alcoholics Anonymous meetings.",
+      "url": "https://www.aa.org/meeting-guide-app"
+    },
+    {
+      "name": "ACA Meeting Search",
+      "description": "Find Adult Children of Alcoholics and Dysfunctional Families meetings.",
+      "url": "https://adultchildren.org/meeting-search/"
+    },
+    {
+      "name": "CoDA Meeting Search",
+      "description": "Find Co-Dependents Anonymous meetings.",
+      "url": "https://coda.org/find-a-meeting/"
+    },
+    {
+      "name": "SMART Recovery Meetings",
+      "description": "Find SMART Recovery meetings.",
+      "url": "https://meetings.smartrecovery.org/meetings/"
+    }
+  ],
+  "readings": [
+    {
+      "name": "NA Just for Today",
+      "description": "Open NA's daily meditation page.",
+      "url": "https://www.jftna.org"
+    },
+    {
+      "name": "AA Daily Reflections",
+      "description": "Open AA's Daily Reflections page.",
+      "url": "https://www.aa.org/daily-reflections"
+    }
+  ],
+  "literature": [
+    {
+      "name": "AA Big Book, Fourth Edition",
+      "description": "Drive link found in Jacob's recovery literature files.",
+      "url": "https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/view"
+    },
+    {
+      "name": "Adult Children of Alcoholics",
+      "description": "Drive link found in Jacob's recovery literature files.",
+      "url": "https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/view"
+    },
+    {
+      "name": "ACA Twelve Steps Workbook",
+      "description": "Drive link found in Jacob's recovery literature files.",
+      "url": "https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/view"
+    },
+    {
+      "name": "CoDA Blue Book, Pocket Edition",
+      "description": "Drive link found in Jacob's recovery literature files.",
+      "url": "https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/view"
+    },
+    {
+      "name": "SMART Recovery Handbook",
+      "description": "Drive link found in Jacob's recovery literature files.",
+      "url": "https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/view"
+    },
+    {
+      "name": "Living Clean: The Journey Continues",
+      "description": "Drive link found in Jacob's recovery literature files.",
+      "url": "https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/view"
+    },
+    {
+      "name": "Basic Text Study Guide for 6th Edition",
+      "description": "Drive link found in Jacob's NA study files.",
+      "url": "https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/view"
+    }
+  ]
+}
