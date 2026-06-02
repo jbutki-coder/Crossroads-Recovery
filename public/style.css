@@ -519,3 +519,65 @@ iframe {
     bottom: 8px;
   }
 }
+.contact-card {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.contact-card .contact-role {
+  display: block;
+  color: var(--muted);
+  margin-top: 2px;
+  font-size: 0.95rem;
+}
+
+.contact-card .contact-phone {
+  display: block;
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-top: 2px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.contact-actions a {
+  min-width: 76px;
+}
+
+.resource-card {
+  display: grid;
+  gap: 10px;
+}
+
+.resource-card h3 {
+  margin: 0;
+}
+
+.resource-card p {
+  margin: 0;
+}
+
+.iframe-card iframe {
+  display: block;
+  width: 100%;
+  min-height: 720px;
+  background: #ffffff;
+  border: 0;
+  border-radius: 16px;
+}
+
+.literature-viewer {
+  margin-top: 24px;
+}
