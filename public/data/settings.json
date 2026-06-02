@@ -4,7 +4,7 @@
     "relapseEndpoint": "",
     "fallbackEmail": "leadership@example.com"
   },
-  "meetingEmbedUrl": "https://bluewater-na.org/meetings/",
+  "meetingEmbedUrl": "https://virtual-na.onrender.com",
   "crisis": [
     {
       "name": "ACCESS",
