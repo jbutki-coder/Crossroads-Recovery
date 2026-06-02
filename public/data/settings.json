@@ -1,10 +1,10 @@
 {
   "forms": {
-    "concernEndpoint": "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID",
-    "relapseEndpoint": "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID",
+    "concernEndpoint": "https://formspree.io/f/xaqkrelz",
+    "relapseEndpoint": "",
     "fallbackEmail": "leadership@example.com"
   },
-  "meetingEmbedUrl": "https://bmlt.app",
+  "meetingEmbedUrl": "https://bluewater-na.org/meetings/",
   "crisis": [
     {
       "name": "ACCESS",
@@ -26,12 +26,16 @@
     {
       "name": "Jacob",
       "role": "Leadership",
-      "phone": ""
+      "phone": "810-577-1218"
     },
     {
       "name": "Angela",
       "role": "Leadership",
-      "phone": ""
+      "phone": "810-858-6488"
+    }, {
+      "name": "Jackson",
+      "role": "Leadership",
+      "phone": "313-801-4985"
     },
     {
       "name": "Richard",
@@ -41,7 +45,7 @@
     {
       "name": "Norma",
       "role": "Leadership",
-      "phone": ""
+      "phone": "360-244-3620"
     }
   ],
   "meetings": [
@@ -85,39 +89,52 @@
   ],
   "literature": [
     {
-      "name": "AA Big Book, Fourth Edition",
-      "description": "Drive link found in Jacob's recovery literature files.",
-      "url": "https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/view"
-    },
-    {
-      "name": "Adult Children of Alcoholics",
-      "description": "Drive link found in Jacob's recovery literature files.",
-      "url": "https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/view"
-    },
-    {
-      "name": "ACA Twelve Steps Workbook",
-      "description": "Drive link found in Jacob's recovery literature files.",
-      "url": "https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/view"
-    },
-    {
-      "name": "CoDA Blue Book, Pocket Edition",
-      "description": "Drive link found in Jacob's recovery literature files.",
-      "url": "https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/view"
-    },
-    {
-      "name": "SMART Recovery Handbook",
-      "description": "Drive link found in Jacob's recovery literature files.",
-      "url": "https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/view"
-    },
-    {
-      "name": "Living Clean: The Journey Continues",
-      "description": "Drive link found in Jacob's recovery literature files.",
-      "url": "https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/view"
+      "name": "NA Basic Text",
+      "description": "Narcotics Anonymous Basic Text.",
+      "url": "https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview",
+      "embed": true
     },
     {
       "name": "Basic Text Study Guide for 6th Edition",
-      "description": "Drive link found in Jacob's NA study files.",
-      "url": "https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/view"
+      "description": "NA Basic Text study guide for the 6th Edition.",
+      "url": "https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview",
+      "embed": true
+    },
+    {
+      "name": "AA Big Book, Fourth Edition",
+      "description": "Alcoholics Anonymous Big Book, Fourth Edition.",
+      "url": "https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview",
+      "embed": true
+    },
+    {
+      "name": "Adult Children of Alcoholics",
+      "description": "Adult Children of Alcoholics recovery literature.",
+      "url": "https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview",
+      "embed": true
+    },
+    {
+      "name": "ACA Twelve Steps Workbook",
+      "description": "Adult Children of Alcoholics Twelve Steps Workbook.",
+      "url": "https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview",
+      "embed": true
+    },
+    {
+      "name": "CoDA Blue Book, Pocket Edition",
+      "description": "Co-Dependents Anonymous Blue Book, Pocket Edition.",
+      "url": "https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview",
+      "embed": true
+    },
+    {
+      "name": "SMART Recovery Handbook",
+      "description": "SMART Recovery Handbook.",
+      "url": "https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview",
+      "embed": true
+    },
+    {
+      "name": "Living Clean: The Journey Continues",
+      "description": "Narcotics Anonymous Living Clean: The Journey Continues.",
+      "url": "https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview",
+      "embed": true
     }
   ]
 }
