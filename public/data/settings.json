@@ -1,11 +1,15 @@
 {
- "forms": {
-  "concernEndpoint": "https://formspree.io/f/xaqkrelz",
-  "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
-  "fallbackEmail": "jacob@crossroadsrecoverycommunity.org"
-}
+  "forms": {
+    "concernEndpoint": "https://formspree.io/f/xaqkrelz",
+    "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
+    "fallbackEmail": "leadership@example.com"
   },
-  "meetingEmbedUrl": "https://virtual-na.onrender.com",
+  "admin": {
+    "name": "Leadership Login",
+    "description": "View incident reports and relapse help requests through the secure Formspree dashboard.",
+    "url": "https://formspree.io/login"
+  },
+  "meetingEmbedUrl": "PUT_YOUR_VIRTUAL_NA_MEETING_FINDER_LINK_HERE",
   "crisis": [
     {
       "name": "ACCESS",
@@ -27,16 +31,12 @@
     {
       "name": "Jacob",
       "role": "Leadership",
-      "phone": "810-577-1218"
+      "phone": "18105771218"
     },
     {
       "name": "Angela",
       "role": "Leadership",
-      "phone": "810-858-6488"
-    }, {
-      "name": "Jackson",
-      "role": "Leadership",
-      "phone": "313-801-4985"
+      "phone": ""
     },
     {
       "name": "Richard",
@@ -46,10 +46,15 @@
     {
       "name": "Norma",
       "role": "Leadership",
-      "phone": "360-244-3620"
+      "phone": ""
     }
   ],
   "meetings": [
+    {
+      "name": "Blue Water Area NA Meetings",
+      "description": "Find local Blue Water Area Narcotics Anonymous meetings.",
+      "url": "https://bluewater-na.org/meetings/"
+    },
     {
       "name": "NA Meeting Finder",
       "description": "Find Narcotics Anonymous meetings.",
