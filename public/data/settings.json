@@ -1,8 +1,9 @@
 {
-  "forms": {
-    "concernEndpoint": "https://formspree.io/f/xaqkrelz",
-    "relapseEndpoint": "",
-    "fallbackEmail": "leadership@example.com"
+ "forms": {
+  "concernEndpoint": "https://formspree.io/f/xaqkrelz",
+  "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
+  "fallbackEmail": "jacob@crossroadsrecoverycommunity.org"
+}
   },
   "meetingEmbedUrl": "https://virtual-na.onrender.com",
   "crisis": [
