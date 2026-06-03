@@ -4,14 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crossroads Recovery Community</title>
-  <meta name="description" content="Recovery support, meeting finder, crisis help, daily readings, and Crossroads resources." />
+  <meta name="description" content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, and Crossroads resources." />
 
-  <link rel="manifest" href="/manifest.json?v=3" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png?v=3" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=3" />
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=3" />
-  <link rel="stylesheet" href="/style.css?v=3" />
+  <link rel="manifest" href="/manifest.json?v=1001" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1001" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1001" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1001" />
+  <link rel="stylesheet" href="/style.css?v=1001" />
 </head>
+
 <body>
   <div class="background-glow"></div>
 
@@ -28,16 +29,19 @@
 
       <div class="hero-content">
         <img src="/assets/crossroads-logo.jpg" alt="Crossroads Recovery Community" class="hero-logo" />
+
         <h1>Recovery help, right when it is needed.</h1>
+
         <p class="lead">
           Use this app to ask for help, submit a concern, find meetings, read recovery literature,
-          and connect with support.
+          complete recovery capital planning, and connect with support.
         </p>
 
         <div class="hero-badge-row">
           <span class="hero-badge">24/7 Support</span>
           <span class="hero-badge">Recovery Resources</span>
           <span class="hero-badge">Meeting Finder</span>
+          <span class="hero-badge">Recovery Capital</span>
         </div>
 
         <div class="quick-grid">
@@ -49,6 +53,11 @@
           <button class="tile concern" data-go="concern">
             <span>Submit a Concern</span>
             <small>No name required</small>
+          </button>
+
+          <button class="tile recovery-capital" data-go="recoveryCapital">
+            <span>Recovery Capital</span>
+            <small>Scale &amp; Plan</small>
           </button>
 
           <button class="tile meetings" data-go="meetings">
@@ -70,13 +79,20 @@
             <span>Contact Leadership</span>
             <small>Call or text support</small>
           </button>
+
+          <button class="tile admin" id="adminLoginButton" type="button">
+            <span>Leadership Login</span>
+            <small>View reports</small>
+          </button>
         </div>
       </div>
     </section>
 
     <section class="panel neon-panel hidden" data-view="relapse">
       <button class="back" data-go="home">← Back</button>
+
       <h2>I Relapsed / I Need Help Now</h2>
+
       <p class="reassure">
         You are not alone. Ask for help quickly and honestly. Use one of the buttons below to connect with support.
       </p>
@@ -103,13 +119,18 @@
         </label>
 
         <button type="submit" class="primary">Send Help Request</button>
-        <p class="fine-print">This form is not for medical emergencies. If someone is in immediate danger, call 911.</p>
+
+        <p class="fine-print">
+          This form is not for medical emergencies. If someone is in immediate danger, call 911.
+        </p>
       </form>
     </section>
 
     <section class="panel neon-panel hidden" data-view="concern">
       <button class="back" data-go="home">← Back</button>
+
       <h2>Submit a Concern</h2>
+
       <p>
         You do not have to enter your name. Please be honest and give leadership enough information
         to check on the situation carefully.
@@ -154,12 +175,154 @@
         </label>
 
         <button type="submit" class="primary">Submit Concern</button>
-        <p class="fine-print">Do not use this form for emergencies. If someone is in immediate danger, call 911.</p>
+
+        <p class="fine-print">
+          Do not use this form for emergencies. If someone is in immediate danger, call 911.
+        </p>
+      </form>
+    </section>
+
+    <section class="panel neon-panel hidden" data-view="recoveryCapital">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>Recovery Capital Scale &amp; Plan</h2>
+
+      <p class="reassure">
+        Recovery capital means the internal and external resources that help a person start and maintain recovery.
+        Complete the scale honestly, then build three simple goals for the next month.
+      </p>
+
+      <form class="support-form recovery-capital-form" id="recoveryCapitalForm">
+        <h3>Client Information</h3>
+
+        <label>Client name
+          <input name="clientName" required />
+        </label>
+
+        <label>House / location
+          <input name="house" placeholder="Example: 924 Wall" required />
+        </label>
+
+        <label>Date
+          <input name="date" type="date" required />
+        </label>
+
+        <div class="score-box">
+          <h3>My Score</h3>
+          <p>
+            <strong id="recoveryCapitalScore">0</strong>
+            <span>/ 175 possible</span>
+          </p>
+
+          <input type="hidden" name="totalScore" id="totalScoreInput" value="0" />
+          <input type="hidden" name="possibleScore" value="175" />
+          <input type="hidden" name="lowestItems" id="lowestItemsInput" />
+          <input type="hidden" name="highestItems" id="highestItemsInput" />
+        </div>
+
+        <h3>Questionnaire &amp; Scoring</h3>
+
+        <p class="fine-print">
+          Rate each item from 0 to 5. A higher number means that area is stronger for you right now.
+        </p>
+
+        <div id="recoveryCapitalQuestions" class="question-list"></div>
+
+        <div class="score-summary">
+          <h3>Score Summary</h3>
+
+          <div>
+            <strong>Lowest scored items:</strong>
+            <p id="lowestItemsDisplay">Complete the scale to see your lowest items.</p>
+          </div>
+
+          <div>
+            <strong>Highest scored items:</strong>
+            <p id="highestItemsDisplay">Complete the scale to see your highest items.</p>
+          </div>
+        </div>
+
+        <h3>Recovery Capital Plan</h3>
+
+        <p class="fine-print">
+          After reviewing your score, write three recovery goals for the next month.
+        </p>
+
+        <div class="goal-card">
+          <h4>Goal #1</h4>
+
+          <label>What will I work on?
+            <textarea name="goal1What" rows="3" required></textarea>
+          </label>
+
+          <label>When will I start?
+            <input name="goal1When" required />
+          </label>
+
+          <label>How often will I work on it?
+            <input name="goal1HowOften" required />
+          </label>
+
+          <label>With whom?
+            <input name="goal1WithWhom" required />
+          </label>
+        </div>
+
+        <div class="goal-card">
+          <h4>Goal #2</h4>
+
+          <label>What will I work on?
+            <textarea name="goal2What" rows="3"></textarea>
+          </label>
+
+          <label>When will I start?
+            <input name="goal2When" />
+          </label>
+
+          <label>How often will I work on it?
+            <input name="goal2HowOften" />
+          </label>
+
+          <label>With whom?
+            <input name="goal2WithWhom" />
+          </label>
+        </div>
+
+        <div class="goal-card">
+          <h4>Goal #3</h4>
+
+          <label>What will I work on?
+            <textarea name="goal3What" rows="3"></textarea>
+          </label>
+
+          <label>When will I start?
+            <input name="goal3When" />
+          </label>
+
+          <label>How often will I work on it?
+            <input name="goal3HowOften" />
+          </label>
+
+          <label>With whom?
+            <input name="goal3WithWhom" />
+          </label>
+        </div>
+
+        <label>Additional comments
+          <textarea name="comments" rows="4"></textarea>
+        </label>
+
+        <button type="submit" class="primary">Submit Recovery Capital Plan</button>
+
+        <p class="fine-print">
+          This form is for recovery planning. If someone is in immediate danger, call 911.
+        </p>
       </form>
     </section>
 
     <section class="panel neon-panel hidden" data-view="meetings">
       <button class="back" data-go="home">← Back</button>
+
       <h2>Find a Meeting</h2>
 
       <div class="button-list" id="meetingLinks"></div>
@@ -172,6 +335,7 @@
 
     <section class="panel neon-panel hidden" data-view="readings">
       <button class="back" data-go="home">← Back</button>
+
       <h2>Daily Readings</h2>
 
       <div class="button-list" id="readingLinks"></div>
@@ -184,13 +348,18 @@
 
     <section class="panel neon-panel hidden" data-view="library">
       <button class="back" data-go="home">← Back</button>
+
       <h2>Recovery Library</h2>
-      <p class="fine-print">Only use links that Crossroads has permission to share publicly or internally.</p>
+
+      <p class="fine-print">
+        Only use links that Crossroads has permission to share publicly or internally.
+      </p>
 
       <div class="resource-list" id="literatureLinks"></div>
 
       <div class="iframe-card literature-viewer">
         <h3 id="literatureFrameTitle">Recovery Literature Viewer</h3>
+
         <iframe
           id="literatureFrame"
           title="Recovery Literature Viewer"
@@ -204,7 +373,9 @@
 
     <section class="panel neon-panel hidden" data-view="contacts">
       <button class="back" data-go="home">← Back</button>
+
       <h2>Contact Leadership</h2>
+
       <div class="resource-list" id="contactLinks"></div>
     </section>
   </main>
@@ -217,6 +388,7 @@
   </nav>
 
   <div class="toast hidden" id="toast"></div>
-  <script src="/app.js?v=3"></script>
+
+  <script src="/app.js?v=1001"></script>
 </body>
 </html>
