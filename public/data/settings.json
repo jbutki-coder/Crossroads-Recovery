@@ -1,4 +1,8 @@
-{
+"admin": {
+  "name": "Leadership Login",
+  "description": "View incident reports, relapse help requests, and recovery capital submissions through the secure Formspree dashboard.",
+  "url": "https://formspree.io/login"
+}{
   "forms": {
     "concernEndpoint": "https://formspree.io/f/xaqkrelz",
     "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
