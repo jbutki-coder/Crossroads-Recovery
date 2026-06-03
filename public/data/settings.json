@@ -2,14 +2,15 @@
   "forms": {
     "concernEndpoint": "https://formspree.io/f/xaqkrelz",
     "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
+    "recoveryCapitalEndpoint": "https://formspree.io/f/xojzajyy",
     "fallbackEmail": "leadership@example.com"
   },
   "admin": {
     "name": "Leadership Login",
-    "description": "View incident reports and relapse help requests through the secure Formspree dashboard.",
+    "description": "View incident reports, relapse help requests, and recovery capital submissions through the secure Formspree dashboard.",
     "url": "https://formspree.io/login"
   },
-  "meetingEmbedUrl": "PUT_YOUR_VIRTUAL_NA_MEETING_FINDER_LINK_HERE",
+  "meetingEmbedUrl": "https://virtual-na.onrender.com",
   "crisis": [
     {
       "name": "ACCESS",
@@ -36,20 +37,25 @@
     {
       "name": "Angela",
       "role": "Leadership",
-      "phone": ""
+      "phone": "18108586488"
     },
     {
-      "name": "Richard",
+      "name": "Jackson",
       "role": "Leadership",
-      "phone": ""
+      "phone": "13138014985"
     },
     {
       "name": "Norma",
       "role": "Leadership",
-      "phone": ""
+      "phone": "13602443620"
     }
   ],
   "meetings": [
+    {
+      "name": "Virtual NA Meeting Finder",
+      "description": "Find virtual Narcotics Anonymous meetings.",
+      "url": "https://virtual-na.onrender.com"
+    },
     {
       "name": "Blue Water Area NA Meetings",
       "description": "Find local Blue Water Area Narcotics Anonymous meetings.",
