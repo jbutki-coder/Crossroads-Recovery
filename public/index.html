@@ -4,13 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Crossroads Recovery Community</title>
-  <meta name="description" content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, and Crossroads resources." />
+  <meta
+    name="description"
+    content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, and Crossroads resources."
+  />
 
-  <link rel="manifest" href="/manifest.json?v=1005" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1005" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1005" />
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1005" />
-  <link rel="stylesheet" href="/style.css?v=1005" />
+  <link rel="manifest" href="/manifest.json?v=1007" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1007" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1007" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1007" />
+  <link rel="stylesheet" href="/style.css?v=1007" />
 </head>
 
 <body>
@@ -60,6 +63,11 @@
             <small>Scale &amp; Plan</small>
           </button>
 
+          <button class="tile drug-test" type="button" onclick="window.location.href='tel:18102021537'">
+            <span>Schedule Drug Test</span>
+            <small>Call testing line</small>
+          </button>
+
           <button class="tile meetings" data-go="meetings">
             <span>Find a Meeting</span>
             <small>NA, AA, ACA, CoDA, SMART</small>
@@ -80,10 +88,15 @@
             <small>Call or text support</small>
           </button>
 
-         <button class="tile admin" id="adminLoginButton" type="button" onclick="window.open('https://formspree.io/login', '_blank')">
-  <span>Leadership Login</span>
-  <small>View reports</small>
-</button>
+          <button
+            class="tile admin"
+            id="adminLoginButton"
+            type="button"
+            onclick="window.open('https://formspree.io/login', '_blank')"
+          >
+            <span>Leadership Login</span>
+            <small>View reports</small>
+          </button>
         </div>
       </div>
     </section>
@@ -102,20 +115,28 @@
       <form class="support-form" id="relapseForm">
         <h3>Ask Crossroads leadership to contact me</h3>
 
-        <label>Your name or initials <span>optional</span>
+        <label>
+          Your name or initials <span>optional</span>
           <input name="name" autocomplete="name" />
         </label>
 
-        <label>Best phone number <span>optional</span>
+        <label>
+          Best phone number <span>optional</span>
           <input name="phone" inputmode="tel" autocomplete="tel" />
         </label>
 
-        <label>House / location
+        <label>
+          House / location
           <input name="house" />
         </label>
 
-        <label>What do you need right now?
-          <textarea name="message" rows="4" placeholder="Example: I relapsed and need help getting to detox or treatment."></textarea>
+        <label>
+          What do you need right now?
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Example: I relapsed and need help getting to detox or treatment."
+          ></textarea>
         </label>
 
         <button type="submit" class="primary">Send Help Request</button>
@@ -137,11 +158,13 @@
       </p>
 
       <form class="support-form" id="concernForm">
-        <label>House / location
+        <label>
+          House / location
           <input name="house" placeholder="Example: 924 Wall" required />
         </label>
 
-        <label>Type of concern
+        <label>
+          Type of concern
           <select name="category" required>
             <option value="">Choose one</option>
             <option>Suspected use</option>
@@ -154,23 +177,28 @@
           </select>
         </label>
 
-        <label>What happened?
+        <label>
+          What happened?
           <textarea name="details" rows="5" required></textarea>
         </label>
 
-        <label>When did it happen?
+        <label>
+          When did it happen?
           <input name="when" placeholder="Today, last night, exact time if known" />
         </label>
 
-        <label>Who should leadership check on?
+        <label>
+          Who should leadership check on?
           <input name="people" />
         </label>
 
-        <label>Your name <span>optional</span>
+        <label>
+          Your name <span>optional</span>
           <input name="name" />
         </label>
 
-        <label>How can leadership contact you? <span>optional</span>
+        <label>
+          How can leadership contact you? <span>optional</span>
           <input name="contact" />
         </label>
 
@@ -195,15 +223,18 @@
       <form class="support-form recovery-capital-form" id="recoveryCapitalForm">
         <h3>Client Information</h3>
 
-        <label>Client name
+        <label>
+          Client name
           <input name="clientName" required />
         </label>
 
-        <label>House / location
+        <label>
+          House / location
           <input name="house" placeholder="Example: 924 Wall" required />
         </label>
 
-        <label>Date
+        <label>
+          Date
           <input name="date" type="date" required />
         </label>
 
@@ -251,19 +282,23 @@
         <div class="goal-card">
           <h4>Goal #1</h4>
 
-          <label>What will I work on?
+          <label>
+            What will I work on?
             <textarea name="goal1What" rows="3" required></textarea>
           </label>
 
-          <label>When will I start?
+          <label>
+            When will I start?
             <input name="goal1When" required />
           </label>
 
-          <label>How often will I work on it?
+          <label>
+            How often will I work on it?
             <input name="goal1HowOften" required />
           </label>
 
-          <label>With whom?
+          <label>
+            With whom?
             <input name="goal1WithWhom" required />
           </label>
         </div>
@@ -271,19 +306,23 @@
         <div class="goal-card">
           <h4>Goal #2</h4>
 
-          <label>What will I work on?
+          <label>
+            What will I work on?
             <textarea name="goal2What" rows="3"></textarea>
           </label>
 
-          <label>When will I start?
+          <label>
+            When will I start?
             <input name="goal2When" />
           </label>
 
-          <label>How often will I work on it?
+          <label>
+            How often will I work on it?
             <input name="goal2HowOften" />
           </label>
 
-          <label>With whom?
+          <label>
+            With whom?
             <input name="goal2WithWhom" />
           </label>
         </div>
@@ -291,24 +330,29 @@
         <div class="goal-card">
           <h4>Goal #3</h4>
 
-          <label>What will I work on?
+          <label>
+            What will I work on?
             <textarea name="goal3What" rows="3"></textarea>
           </label>
 
-          <label>When will I start?
+          <label>
+            When will I start?
             <input name="goal3When" />
           </label>
 
-          <label>How often will I work on it?
+          <label>
+            How often will I work on it?
             <input name="goal3HowOften" />
           </label>
 
-          <label>With whom?
+          <label>
+            With whom?
             <input name="goal3WithWhom" />
           </label>
         </div>
 
-        <label>Additional comments
+        <label>
+          Additional comments
           <textarea name="comments" rows="4"></textarea>
         </label>
 
@@ -367,7 +411,8 @@
           width="100%"
           height="760"
           allow="autoplay"
-          loading="lazy"></iframe>
+          loading="lazy"
+        ></iframe>
       </div>
     </section>
 
@@ -376,7 +421,61 @@
 
       <h2>Contact Leadership</h2>
 
-      <div class="resource-list" id="contactLinks"></div>
+      <div class="resource-list" id="contactLinks">
+        <div class="contact-card">
+          <h3>Jacob</h3>
+          <span class="contact-role">Leadership</span>
+          <span class="contact-phone">(810) 577-1218</span>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:18105771218'">Call</button>
+            <button class="secondary-button" type="button" onclick="window.location.href='sms:18105771218'">Text</button>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Angela</h3>
+          <span class="contact-role">Leadership</span>
+          <span class="contact-phone">(810) 858-6488</span>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:18108586488'">Call</button>
+            <button class="secondary-button" type="button" onclick="window.location.href='sms:18108586488'">Text</button>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Jackson</h3>
+          <span class="contact-role">Leadership</span>
+          <span class="contact-phone">(313) 801-4985</span>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:13138014985'">Call</button>
+            <button class="secondary-button" type="button" onclick="window.location.href='sms:13138014985'">Text</button>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Norma</h3>
+          <span class="contact-role">Leadership</span>
+          <span class="contact-phone">(360) 244-3620</span>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:13602443620'">Call</button>
+            <button class="secondary-button" type="button" onclick="window.location.href='sms:13602443620'">Text</button>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Schedule Drug Test</h3>
+          <span class="contact-role">Testing Line</span>
+          <span class="contact-phone">(810) 202-1537</span>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:18102021537'">Call</button>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -389,7 +488,7 @@
 
   <div class="toast hidden" id="toast"></div>
 
-  <script src="/app.js?v=1005"></script>
+  <script src="/app.js?v=1007"></script>
 
   <script>
     const CRC_RECOVERY_CAPITAL_QUESTIONS = [
@@ -432,8 +531,7 @@
 
     function crcRenderRecoveryCapitalFallback() {
       const container = document.getElementById("recoveryCapitalQuestions");
-      if (!container) return;
-      if (container.children.length > 0) return;
+      if (!container || container.children.length > 0) return;
 
       CRC_RECOVERY_CAPITAL_QUESTIONS.forEach((question, index) => {
         const itemNumber = index + 1;
