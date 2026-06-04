@@ -9,11 +9,11 @@
     content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, and Crossroads resources."
   />
 
-  <link rel="manifest" href="/manifest.json?v=1008" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1008" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1008" />
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1008" />
-  <link rel="stylesheet" href="/style.css?v=1008" />
+  <link rel="manifest" href="/manifest.json?v=1011" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1011" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1011" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1011" />
+  <link rel="stylesheet" href="/style.css?v=1011" />
 </head>
 
 <body>
@@ -37,7 +37,7 @@
 
         <p class="lead">
           Use this app to ask for help, submit a concern, find meetings, read recovery literature,
-          complete recovery capital planning, and connect with support.
+          complete recovery capital planning, find local job leads, and connect with support.
         </p>
 
         <div class="hero-badge-row">
@@ -45,6 +45,7 @@
           <span class="hero-badge">Recovery Resources</span>
           <span class="hero-badge">Meeting Finder</span>
           <span class="hero-badge">Recovery Capital</span>
+          <span class="hero-badge">Job Leads</span>
         </div>
 
         <div class="quick-grid">
@@ -61,6 +62,11 @@
           <button class="tile recovery-capital" data-go="recoveryCapital">
             <span>Recovery Capital</span>
             <small>Scale &amp; Plan</small>
+          </button>
+
+          <button class="tile jobs" data-go="jobs">
+            <span>Job Search</span>
+            <small>Local classifieds</small>
           </button>
 
           <button class="tile drug-test" type="button" onclick="window.location.href='tel:18102021537'">
@@ -364,6 +370,133 @@
       </form>
     </section>
 
+
+    <section class="panel neon-panel hidden" data-view="jobs">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>Job Search</h2>
+
+      <p class="fine-print">
+        Local job leads and classifieds. Listings are updated by Crossroads staff.
+        Apply directly using the information below.
+      </p>
+
+      <div class="resource-list" id="jobListings">
+        <div class="resource-card job-card">
+          <h3>Aerotek - Production Operators</h3>
+          <p><strong>Location:</strong> Port Huron, MI</p>
+          <p><strong>Position:</strong> Production Operators / Manufacturing</p>
+          <p><strong>Pay:</strong> $17.00 - $18.00 depending on shift</p>
+          <p><strong>Shift:</strong> 1st, 2nd, and 3rd shift openings</p>
+          <p><strong>Notes:</strong> Interviews daily. New hires may be able to start next day. Non-THC drug test.</p>
+          <p><strong>Contact:</strong> Adam from Aerotek</p>
+          <p><strong>Email:</strong> bezemek@aerotek.com</p>
+          <p><strong>Phone:</strong> (810) 237-3623</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:18102373623'">Call Adam</button>
+            <a class="secondary-button" href="mailto:bezemek@aerotek.com">Email Resume</a>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>Olive Garden</h3>
+          <p><strong>Location:</strong> Port Huron / Fort Gratiot area</p>
+          <p><strong>Position:</strong> Restaurant positions</p>
+          <p><strong>Pay:</strong> Competitive pay, paid weekly</p>
+          <p><strong>Schedule:</strong> Flexible schedules</p>
+          <p><strong>Notes:</strong> Career advancement and team culture. Flyer lists job code: M129.</p>
+          <p><strong>Apply:</strong> jobs.olivegarden.com</p>
+
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://jobs.olivegarden.com" target="_blank" rel="noopener noreferrer">Apply Online</a>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>Busy Beavers Moving</h3>
+          <p><strong>Location:</strong> Port Huron, MI</p>
+          <p><strong>Position:</strong> Moving / labor help</p>
+          <p><strong>Apply:</strong> Apply in person</p>
+          <p><strong>Notes:</strong> Reported as located across from Food Depot. Hiring information came from a local lead.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" disabled>Apply In Person</button>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>SONS Outreach</h3>
+          <p><strong>Location:</strong> Port Huron, MI</p>
+          <p><strong>Position:</strong> Admin &amp; Marketing Assistant</p>
+          <p><strong>Hours:</strong> Part-time, 20-30 hours</p>
+          <p><strong>Pay:</strong> Based on skill and experience</p>
+          <p><strong>Email:</strong> office@sonsoutreach.org</p>
+          <p><strong>Website:</strong> www.sonsoutreach.org</p>
+
+          <div class="contact-actions">
+            <a class="secondary-button" href="mailto:office@sonsoutreach.org">Email Resume</a>
+            <a class="secondary-button" href="https://www.sonsoutreach.org" target="_blank" rel="noopener noreferrer">Website</a>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>Chef Shell's Restaurant &amp; Catering</h3>
+          <p><strong>Location:</strong> Port Huron, MI</p>
+          <p><strong>Positions:</strong> Overnight baker, donut delivery driver, waitstaff, cook / cold side prep</p>
+          <p><strong>Apply:</strong> Email resume or come in to fill out an application</p>
+          <p><strong>Email:</strong> info@chefshells.com</p>
+
+          <div class="contact-actions">
+            <a class="secondary-button" href="mailto:info@chefshells.com">Email Resume</a>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>Pelzer</h3>
+          <p><strong>Location:</strong> Port Huron area</p>
+          <p><strong>Position:</strong> Manufacturing / production</p>
+          <p><strong>Pay:</strong> Add pay when confirmed</p>
+          <p><strong>Shift:</strong> Add shift when confirmed</p>
+          <p><strong>Notes:</strong> Local manufacturing lead. Update this card with current hiring details.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" disabled>Details Needed</button>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>IAC</h3>
+          <p><strong>Location:</strong> Port Huron area</p>
+          <p><strong>Position:</strong> Manufacturing / automotive production</p>
+          <p><strong>Pay:</strong> Add pay when confirmed</p>
+          <p><strong>Shift:</strong> Add shift when confirmed</p>
+          <p><strong>Notes:</strong> Local manufacturing lead. Update this card with current hiring details.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" disabled>Details Needed</button>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>Airlink Shuttle and Tours - Alaska</h3>
+          <p><strong>Location:</strong> Fairbanks / Anchorage, Alaska</p>
+          <p><strong>Position:</strong> CDL and non-CDL drivers</p>
+          <p><strong>Pay:</strong> Up to $400 per day plus tips</p>
+          <p><strong>Requirements:</strong> 3 years of commercial passenger transport experience, strong people skills, and ability to handle luggage professionally.</p>
+          <p><strong>Email:</strong> info@airlinkalaska.com</p>
+          <p><strong>Phone:</strong> (907) 452-3337 office or (907) 322-3821 mobile</p>
+          <p><strong>Notes:</strong> Out-of-state opportunity. Must get to Alaska independently.</p>
+
+          <div class="contact-actions">
+            <a class="secondary-button" href="mailto:info@airlinkalaska.com">Email</a>
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:19074523337'">Call Office</button>
+            <button class="secondary-button" type="button" onclick="window.location.href='tel:19073223821'">Call Mobile</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="panel neon-panel hidden" data-view="meetings">
       <button class="back" data-go="home">← Back</button>
 
@@ -442,69 +575,55 @@
       </div>
     </section>
 
-   <section class="panel neon-panel hidden" data-view="readings">
-  <button class="back" data-go="home">← Back</button>
+    <section class="panel neon-panel hidden" data-view="readings">
+      <button class="back" data-go="home">← Back</button>
 
-  <h2>Daily Readings</h2>
+      <h2>Daily Readings</h2>
 
-  <p class="fine-print">
-    Use the buttons below to open recovery readings. Some fellowship websites block embedded viewing,
-    so AA Daily Reflections opens in a new tab.
-  </p>
+      <p class="fine-print">
+        Use the buttons below to open recovery readings. Some fellowship websites may block embedded viewing,
+        so each reading also has an open-new-tab button.
+      </p>
 
-  <div class="button-list" id="readingLinks">
-    <div class="resource-card">
-      <h3>NA Just for Today</h3>
-      <p>Open NA's daily meditation page.</p>
+      <div class="button-list" id="readingLinks">
+        <div class="resource-card">
+          <h3>NA Just for Today</h3>
+          <p>Open NA's daily meditation page.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.jftna.org'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://www.jftna.org" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
 
-      <div class="contact-actions">
-        <button
-          class="secondary-button"
-          type="button"
-          onclick="document.getElementById('readingFrame').src='https://www.jftna.org'"
-        >
-          Open in App
-        </button>
-
-        <a
-          class="secondary-button"
-          href="https://www.jftna.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open New Tab
-        </a>
+        <div class="resource-card">
+          <h3>AA Daily Reflections</h3>
+          <p>Open AA's Daily Reflections page.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.aa.org/daily-reflections'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://www.aa.org/daily-reflections" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="resource-card">
-      <h3>AA Daily Reflections</h3>
-      <p>Open AA's Daily Reflections page on the official AA website.</p>
-
-      <div class="contact-actions">
-        <a
-          class="secondary-button"
-          href="https://www.aa.org/daily-reflections"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Open AA Daily Reflections
-        </a>
+      <div class="iframe-card">
+        <h3>Reading Window</h3>
+        <iframe
+          id="readingFrame"
+          title="Daily reading"
+          src="https://www.jftna.org"
+          loading="lazy"
+        ></iframe>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="iframe-card">
-    <h3>Reading Window</h3>
-
-    <iframe
-      id="readingFrame"
-      title="Daily reading"
-      src="https://www.jftna.org"
-      loading="lazy"
-    ></iframe>
-  </div>
-</section>
     <section class="panel neon-panel hidden" data-view="library">
       <button class="back" data-go="home">← Back</button>
 
@@ -541,30 +660,33 @@
           </div>
         </div>
 
+
+
         <div class="resource-card">
-          <div class="resource-card">
-  <h3>Recovery Dharma</h3>
-  <p>Recovery Dharma recovery literature.</p>
+          <h3>Recovery Dharma</h3>
+          <p>Recovery Dharma recovery literature.</p>
 
-  <div class="contact-actions">
-    <button
-      class="secondary-button"
-      type="button"
-      onclick="document.getElementById('literatureFrameTitle').textContent='Recovery Dharma'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview'"
-    >
-      Open in App
-    </button>
+          <div class="contact-actions">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='Recovery Dharma'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview'"
+            >
+              Open in App
+            </button>
 
-    <a
-      class="secondary-button"
-      href="https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Open New Tab
-    </a>
-  </div>
-</div>
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
           <h3>AA Big Book, Fourth Edition</h3>
           <p>Alcoholics Anonymous Big Book, Fourth Edition.</p>
           <div class="contact-actions">
@@ -730,7 +852,7 @@
 
   <div class="toast hidden" id="toast"></div>
 
-  <script src="/app.js?v=1008"></script>
+  <script src="/app.js?v=1011"></script>
 
   <script>
     const CRC_RECOVERY_CAPITAL_QUESTIONS = [
