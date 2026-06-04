@@ -3,7 +3,7 @@ const APP_STATE = {
   currentView: "home"
 };
 
-const SETTINGS_URL = "/data/settings.json?v=1020";
+const SETTINGS_URL = "/data/settings.json?v=1022";
 
 const RECOVERY_CAPITAL_QUESTIONS = [
   "I have the financial resources to provide for myself and my family.",
@@ -67,7 +67,6 @@ async function initApp() {
     bindConcernForm(settings);
     bindRelapseForm(settings);
     bindRecoveryCapitalForm(settings);
-    bindClientHelpForm(settings);
     bindAppProblemForm(settings);
     bindAdminLogin(settings);
   } catch (error) {
@@ -337,28 +336,6 @@ function bindRecoveryCapitalForm(settings) {
   });
 }
 
-function bindClientHelpForm(settings) {
-  const form = document.getElementById("clientHelpForm");
-  if (!form) return;
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const endpoint = settings?.forms?.clientHelpEndpoint || settings?.forms?.concernEndpoint;
-
-    if (!endpoint) {
-      submitByEmailFallback(form, settings, "Crossroads Client Help Request");
-      return;
-    }
-
-    const formData = new FormData(form);
-    formData.append("submissionType", "Client Help / Document Request");
-    formData.append("source", "Crossroads Recovery App");
-
-    await submitFormspreeForm(form, endpoint, formData, "Client help request submitted. Staff has received it.");
-  });
-}
-
 function bindAppProblemForm(settings) {
   const form = document.getElementById("appProblemForm");
   if (!form) return;
@@ -439,6 +416,50 @@ function clearRecoveryCapitalAnswers() {
   selectedAnswers.forEach((input) => {
     input.checked = false;
   });
+}
+
+
+async function sendClientHelpRequest(helpType) {
+  const nameInput = document.getElementById("clientHelpName");
+  const houseInput = document.getElementById("clientHelpHouse");
+
+  const clientName = nameInput ? nameInput.value.trim() : "";
+  const house = houseInput ? houseInput.value.trim() : "";
+
+  if (!clientName || !house) {
+    showToast("Please enter the client name and house first.");
+    return;
+  }
+
+  const endpoint =
+    APP_STATE.settings?.forms?.clientHelpEndpoint ||
+    "https://formspree.io/f/xpqewwbo";
+
+  const formData = new FormData();
+  formData.append("submissionType", "Client Help / Document Request");
+  formData.append("clientName", clientName);
+  formData.append("house", house);
+  formData.append("helpNeeded", helpType);
+  formData.append("source", "Crossroads Recovery App");
+
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Client help request failed.");
+    }
+
+    showToast(`${clientName} needs help with ${helpType}. Staff has been notified.`);
+  } catch (error) {
+    console.error(error);
+    showToast("The request could not send. Please tell staff directly.");
+  }
 }
 
 function submitByEmailFallback(form, settings, subject) {
