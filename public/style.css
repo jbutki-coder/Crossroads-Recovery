@@ -683,3 +683,21 @@ iframe {
     width: 100%;
   }
 }
+
+
+.tile.jobs:hover {
+  box-shadow: 0 0 24px rgba(83, 255, 179, 0.35);
+  border-color: rgba(83, 255, 179, 0.55);
+}
+
+.job-card p {
+  margin: 0;
+}
+
+.job-card strong {
+  color: #ffffff;
+}
+
+.job-card .contact-actions {
+  margin-top: 12px;
+}
