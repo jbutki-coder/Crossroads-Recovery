@@ -3,11 +3,12 @@
     "concernEndpoint": "https://formspree.io/f/xaqkrelz",
     "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
     "recoveryCapitalEndpoint": "https://formspree.io/f/xojzajyy",
+    "appProblemEndpoint": "https://formspree.io/f/xaqkrelz",
     "fallbackEmail": "leadership@example.com"
   },
   "admin": {
     "name": "Leadership Login",
-    "description": "View incident reports, relapse help requests, and recovery capital submissions through the secure Formspree dashboard.",
+    "description": "View incident reports, relapse help requests, recovery capital submissions, and app problem reports through the secure Formspree dashboard.",
     "url": "https://formspree.io/login"
   },
   "meetingEmbedUrl": "https://virtual-na.onrender.com",
@@ -118,6 +119,12 @@
       "embed": true
     },
     {
+      "name": "Recovery Dharma",
+      "description": "Recovery Dharma recovery literature.",
+      "url": "https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview",
+      "embed": true
+    },
+    {
       "name": "AA Big Book, Fourth Edition",
       "description": "Alcoholics Anonymous Big Book, Fourth Edition.",
       "url": "https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview",
@@ -151,12 +158,6 @@
       "name": "Living Clean: The Journey Continues",
       "description": "Narcotics Anonymous Living Clean: The Journey Continues.",
       "url": "https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview",
-      "embed": true
-    },
-    {
-      "name": "Recovery Dharma",
-      "description": "Recovery Dharma recovery literature.",
-      "url": "https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview",
       "embed": true
     }
   ]
