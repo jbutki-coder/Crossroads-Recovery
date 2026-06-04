@@ -3,13 +3,13 @@
     "concernEndpoint": "https://formspree.io/f/xaqkrelz",
     "relapseEndpoint": "https://formspree.io/f/xpqnvdve",
     "recoveryCapitalEndpoint": "https://formspree.io/f/xojzajyy",
-    "clientHelpEndpoint": "https://formspree.io/f/xpqewwbo",
     "appProblemEndpoint": "https://formspree.io/f/xaqkrelz",
-    "fallbackEmail": "leadership@example.com"
+    "fallbackEmail": "leadership@example.com",
+    "clientHelpEndpoint": "https://formspree.io/f/xpqewwbo"
   },
   "admin": {
     "name": "Leadership Login",
-    "description": "View incident reports, relapse help requests, recovery capital submissions, client help requests, and app problem reports through the secure Formspree dashboard.",
+    "description": "View incident reports, relapse help requests, recovery capital submissions, and app problem reports through the secure Formspree dashboard.",
     "url": "https://formspree.io/login"
   },
   "meetingEmbedUrl": "https://virtual-na.onrender.com",
