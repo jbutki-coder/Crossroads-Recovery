@@ -784,6 +784,18 @@ iframe {
   justify-content: center;
 }
 
+
+
+/* Home button image fix - appended only */
+.home-icon {
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .home-button-image {
   display: block;
   width: 100%;
@@ -807,6 +819,76 @@ iframe {
 .route-table tr:nth-child(even) td { background: rgba(255,255,255,0.035); }
 
 /* I-94 Express route subheadings */
+.route-subheading {
+  margin: 16px 16px 4px;
+  color: var(--neon-blue);
+  font-size: 1rem;
+}
+
+/* Transportation route dropdowns - appended fix */
+.bus-routes-card {
+  border-color: rgba(39, 211, 255, 0.28);
+}
+
+.route-accordion {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.route-accordion details {
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  overflow: hidden;
+}
+
+.route-accordion summary {
+  cursor: pointer;
+  padding: 14px 16px;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(39,211,255,0.08);
+}
+
+.route-accordion details[open] summary {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  color: var(--neon-green);
+}
+
+.route-accordion details > p {
+  padding: 0 16px;
+}
+
+.route-table-wrap {
+  overflow-x: auto;
+  padding: 12px 16px 16px;
+}
+
+.route-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.route-table th,
+.route-table td {
+  border: 1px solid rgba(255,255,255,0.09);
+  padding: 9px 10px;
+  text-align: left;
+}
+
+.route-table th {
+  color: #fff;
+  background: rgba(39,211,255,0.10);
+}
+
+.route-table tr:nth-child(even) td {
+  background: rgba(255,255,255,0.035);
+}
+
 .route-subheading {
   margin: 16px 16px 4px;
   color: var(--neon-blue);
