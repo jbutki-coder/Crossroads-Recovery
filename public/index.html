@@ -9,11 +9,11 @@
     content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, and Crossroads resources."
   />
 
-  <link rel="manifest" href="/manifest.json?v=1007" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1007" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1007" />
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1007" />
-  <link rel="stylesheet" href="/style.css?v=1007" />
+  <link rel="manifest" href="/manifest.json?v=1008" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1008" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1008" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1008" />
+  <link rel="stylesheet" href="/style.css?v=1008" />
 </head>
 
 <body>
@@ -369,11 +369,76 @@
 
       <h2>Find a Meeting</h2>
 
-      <div class="button-list" id="meetingLinks"></div>
+      <p class="fine-print">
+        Use the buttons below to find meetings. The embedded finder will only work if the Virtual NA site is live and allows embedding.
+      </p>
+
+      <div class="button-list" id="meetingLinks">
+        <div class="resource-card">
+          <h3>Virtual NA Meeting Finder</h3>
+          <p>Find virtual Narcotics Anonymous meetings.</p>
+          <a class="secondary-button" href="https://virtual-na.onrender.com" target="_blank" rel="noopener noreferrer">
+            Open Virtual NA Finder
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <h3>Blue Water Area NA Meetings</h3>
+          <p>Find local Blue Water Area Narcotics Anonymous meetings.</p>
+          <a class="secondary-button" href="https://bluewater-na.org/meetings/" target="_blank" rel="noopener noreferrer">
+            Open Blue Water NA
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <h3>NA Meeting Finder</h3>
+          <p>Find Narcotics Anonymous meetings.</p>
+          <a class="secondary-button" href="https://www.na.org/meetingsearch/" target="_blank" rel="noopener noreferrer">
+            Open NA Finder
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <h3>AA Meeting Guide</h3>
+          <p>Find Alcoholics Anonymous meetings.</p>
+          <a class="secondary-button" href="https://www.aa.org/meeting-guide-app" target="_blank" rel="noopener noreferrer">
+            Open AA Finder
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <h3>ACA Meeting Search</h3>
+          <p>Find Adult Children of Alcoholics and Dysfunctional Families meetings.</p>
+          <a class="secondary-button" href="https://adultchildren.org/meeting-search/" target="_blank" rel="noopener noreferrer">
+            Open ACA Finder
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <h3>CoDA Meeting Search</h3>
+          <p>Find Co-Dependents Anonymous meetings.</p>
+          <a class="secondary-button" href="https://coda.org/find-a-meeting/" target="_blank" rel="noopener noreferrer">
+            Open CoDA Finder
+          </a>
+        </div>
+
+        <div class="resource-card">
+          <h3>SMART Recovery Meetings</h3>
+          <p>Find SMART Recovery meetings.</p>
+          <a class="secondary-button" href="https://meetings.smartrecovery.org/meetings/" target="_blank" rel="noopener noreferrer">
+            Open SMART Finder
+          </a>
+        </div>
+      </div>
 
       <div class="iframe-card">
-        <h3>Embedded Meeting Finder</h3>
-        <iframe id="meetingFrame" title="Meeting finder" loading="lazy"></iframe>
+        <h3>Embedded Virtual Meeting Finder</h3>
+        <iframe
+          id="meetingFrame"
+          title="Virtual NA meeting finder"
+          src="https://virtual-na.onrender.com"
+          loading="lazy"
+        ></iframe>
       </div>
     </section>
 
@@ -382,11 +447,47 @@
 
       <h2>Daily Readings</h2>
 
-      <div class="button-list" id="readingLinks"></div>
+      <p class="fine-print">
+        Use the buttons below to open recovery readings. Some fellowship websites may block embedded viewing,
+        so each reading also has an open-new-tab button.
+      </p>
+
+      <div class="button-list" id="readingLinks">
+        <div class="resource-card">
+          <h3>NA Just for Today</h3>
+          <p>Open NA's daily meditation page.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.jftna.org'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://www.jftna.org" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>AA Daily Reflections</h3>
+          <p>Open AA's Daily Reflections page.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.aa.org/daily-reflections'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://www.aa.org/daily-reflections" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+      </div>
 
       <div class="iframe-card">
         <h3>Reading Window</h3>
-        <iframe id="readingFrame" title="Daily reading" loading="lazy"></iframe>
+        <iframe
+          id="readingFrame"
+          title="Daily reading"
+          src="https://www.jftna.org"
+          loading="lazy"
+        ></iframe>
       </div>
     </section>
 
@@ -399,7 +500,111 @@
         Only use links that Crossroads has permission to share publicly or internally.
       </p>
 
-      <div class="resource-list" id="literatureLinks"></div>
+      <div class="resource-list" id="literatureLinks">
+        <div class="resource-card">
+          <h3>NA Basic Text</h3>
+          <p>Narcotics Anonymous Basic Text.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='NA Basic Text'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Basic Text Study Guide for 6th Edition</h3>
+          <p>NA Basic Text study guide for the 6th Edition.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='Basic Text Study Guide for 6th Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>AA Big Book, Fourth Edition</h3>
+          <p>Alcoholics Anonymous Big Book, Fourth Edition.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='AA Big Book, Fourth Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Adult Children of Alcoholics</h3>
+          <p>Adult Children of Alcoholics recovery literature.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='Adult Children of Alcoholics'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>ACA Twelve Steps Workbook</h3>
+          <p>Adult Children of Alcoholics Twelve Steps Workbook.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='ACA Twelve Steps Workbook'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>CoDA Blue Book, Pocket Edition</h3>
+          <p>Co-Dependents Anonymous Blue Book, Pocket Edition.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='CoDA Blue Book, Pocket Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>SMART Recovery Handbook</h3>
+          <p>SMART Recovery Handbook.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='SMART Recovery Handbook'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Living Clean: The Journey Continues</h3>
+          <p>Narcotics Anonymous Living Clean: The Journey Continues.</p>
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='Living Clean: The Journey Continues'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview'">
+              Open in App
+            </button>
+            <a class="secondary-button" href="https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview" target="_blank" rel="noopener noreferrer">
+              Open New Tab
+            </a>
+          </div>
+        </div>
+      </div>
 
       <div class="iframe-card literature-viewer">
         <h3 id="literatureFrameTitle">Recovery Literature Viewer</h3>
@@ -407,7 +612,7 @@
         <iframe
           id="literatureFrame"
           title="Recovery Literature Viewer"
-          src=""
+          src="https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview"
           width="100%"
           height="760"
           allow="autoplay"
@@ -488,7 +693,7 @@
 
   <div class="toast hidden" id="toast"></div>
 
-  <script src="/app.js?v=1007"></script>
+  <script src="/app.js?v=1008"></script>
 
   <script>
     const CRC_RECOVERY_CAPITAL_QUESTIONS = [
