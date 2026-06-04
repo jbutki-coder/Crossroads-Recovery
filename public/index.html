@@ -9,11 +9,11 @@
     content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, job search, client help, transportation, house rules, and Crossroads resources."
   />
 
-  <link rel="manifest" href="/manifest.json?v=1020" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1020" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1020" />
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1020" />
-  <link rel="stylesheet" href="/style.css?v=1020" />
+  <link rel="manifest" href="/manifest.json?v=1022" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1022" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1022" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1022" />
+  <link rel="stylesheet" href="/style.css?v=1022" />
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 
   <header class="topbar glass">
     <button class="icon-button home-icon" id="homeButton" aria-label="Home">
-      <img src="/assets/crossroads-home-button.png?v=1020" alt="Home" class="home-button-image" />
+      <img src="/assets/crossroads-home-button.png?v=1022" alt="Home" class="home-button-image" />
     </button>
 
     <img src="/assets/crossroads-logo.jpg" alt="Crossroads Recovery Community" class="logo" />
@@ -650,17 +650,41 @@
       <h2>Client Help / Documents</h2>
 
       <p class="fine-print">
-        Use this page as a starting point for common paperwork and life-stability needs.
-        Staff can help residents make a plan and follow through.
+        Enter the client name and house one time, then press the button for what help is needed.
+        Staff will receive a simple request through Formspree.
       </p>
+
+      <div class="support-form client-help-basic">
+        <h3>Who needs help?</h3>
+
+        <label>
+          Client name
+          <input id="clientHelpName" autocomplete="name" />
+        </label>
+
+        <label>
+          House / location
+          <input id="clientHelpHouse" placeholder="Example: 924 Wall" />
+        </label>
+
+        <p class="fine-print">
+          After entering name and house, press the matching request button below.
+        </p>
+      </div>
 
       <div class="resource-list">
         <div class="resource-card">
           <h3>State ID</h3>
           <p>Needed for jobs, benefits, housing, medical care, and most recovery-related paperwork.</p>
           <p><strong>Start here:</strong> Michigan Secretary of State.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">Open SOS Website</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('State ID')">
+              Request Help with State ID
+            </button>
+            <a class="secondary-button" href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">
+              Open SOS Website
+            </a>
           </div>
         </div>
 
@@ -668,29 +692,53 @@
           <h3>Birth Certificate</h3>
           <p>Needed for ID, employment documents, and benefits. The process depends on the county and state where the resident was born.</p>
           <p><strong>Staff note:</strong> Help resident identify birth county and required fee.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Birth Certificate')">
+              Request Help with Birth Certificate
+            </button>
+          </div>
         </div>
 
         <div class="resource-card">
           <h3>Social Security Card</h3>
           <p>Needed for employment and identity verification. Replacement cards can often be requested online or through Social Security.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://www.ssa.gov/number-card" target="_blank" rel="noopener noreferrer">SSA Card Help</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Social Security Card')">
+              Request Help with Social Security Card
+            </button>
+            <a class="secondary-button" href="https://www.ssa.gov/number-card" target="_blank" rel="noopener noreferrer">
+              SSA Card Help
+            </a>
           </div>
         </div>
 
         <div class="resource-card">
           <h3>Medicaid / Insurance</h3>
           <p>Residents may need help applying, renewing, or updating address/contact information.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://newmibridges.michigan.gov/" target="_blank" rel="noopener noreferrer">MI Bridges</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Medicaid / Insurance')">
+              Request Help with Medicaid / Insurance
+            </button>
+            <a class="secondary-button" href="https://newmibridges.michigan.gov/" target="_blank" rel="noopener noreferrer">
+              MI Bridges
+            </a>
           </div>
         </div>
 
         <div class="resource-card">
           <h3>Food Assistance</h3>
           <p>Apply for food benefits, update information, or check benefit status through MI Bridges.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://newmibridges.michigan.gov/" target="_blank" rel="noopener noreferrer">Open MI Bridges</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Food Assistance')">
+              Request Help with Food Assistance
+            </button>
+            <a class="secondary-button" href="https://newmibridges.michigan.gov/" target="_blank" rel="noopener noreferrer">
+              Open MI Bridges
+            </a>
           </div>
         </div>
 
@@ -698,29 +746,53 @@
           <h3>Resume Help</h3>
           <p>Staff can help residents build a simple resume, list work history, identify skills, and prepare for applications.</p>
           <p><strong>Bring:</strong> Work history, phone number, email, education level, certifications, and references if available.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Resume Help')">
+              Request Resume Help
+            </button>
+          </div>
         </div>
 
         <div class="resource-card">
           <h3>Michigan Works</h3>
           <p>Employment support, job leads, training resources, and workforce services.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://www.michiganworks.org/" target="_blank" rel="noopener noreferrer">Michigan Works</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Michigan Works')">
+              Request Michigan Works Help
+            </button>
+            <a class="secondary-button" href="https://www.michiganworks.org/" target="_blank" rel="noopener noreferrer">
+              Michigan Works
+            </a>
           </div>
         </div>
 
         <div class="resource-card">
           <h3>MRS / Vocational Rehabilitation</h3>
           <p>Michigan Rehabilitation Services may help eligible residents with employment planning, accommodations, training, and job support.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://www.michigan.gov/leo/bureaus-agencies/mrs" target="_blank" rel="noopener noreferrer">Open MRS</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('MRS / Vocational Rehabilitation')">
+              Request MRS Help
+            </button>
+            <a class="secondary-button" href="https://www.michigan.gov/leo/bureaus-agencies/mrs" target="_blank" rel="noopener noreferrer">
+              Open MRS
+            </a>
           </div>
         </div>
 
         <div class="resource-card">
           <h3>Driver’s License / Secretary of State</h3>
           <p>Help with license status, reinstatement steps, appointments, and required documents.</p>
+
           <div class="contact-actions">
-            <a class="secondary-button" href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">Open SOS</a>
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Driver’s License / Secretary of State')">
+              Request Driver’s License Help
+            </button>
+            <a class="secondary-button" href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">
+              Open SOS
+            </a>
           </div>
         </div>
 
@@ -728,6 +800,34 @@
           <h3>Probation / Parole Paperwork</h3>
           <p>Residents should communicate requirements early and provide documentation when requested.</p>
           <p><strong>Staff note:</strong> Help organize appointments, verification letters, schedules, and compliance documents.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Probation / Parole Paperwork')">
+              Request Probation / Parole Paperwork Help
+            </button>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Employment Paperwork</h3>
+          <p>Help with work schedules, employment verification, onboarding documents, direct deposit forms, and job-related paperwork.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Employment Paperwork')">
+              Request Employment Paperwork Help
+            </button>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Other Document Help</h3>
+          <p>Use this when the need does not fit one of the categories above.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" onclick="sendClientHelpRequest('Other Document Help')">
+              Request Other Document Help
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1459,6 +1559,6 @@
 
   <div class="toast hidden" id="toast"></div>
 
-  <script src="/app.js?v=1020"></script>
+  <script src="/app.js?v=1022"></script>
 </body>
 </html>
