@@ -442,55 +442,69 @@
       </div>
     </section>
 
-    <section class="panel neon-panel hidden" data-view="readings">
-      <button class="back" data-go="home">← Back</button>
+   <section class="panel neon-panel hidden" data-view="readings">
+  <button class="back" data-go="home">← Back</button>
 
-      <h2>Daily Readings</h2>
+  <h2>Daily Readings</h2>
 
-      <p class="fine-print">
-        Use the buttons below to open recovery readings. Some fellowship websites may block embedded viewing,
-        so each reading also has an open-new-tab button.
-      </p>
+  <p class="fine-print">
+    Use the buttons below to open recovery readings. Some fellowship websites block embedded viewing,
+    so AA Daily Reflections opens in a new tab.
+  </p>
 
-      <div class="button-list" id="readingLinks">
-        <div class="resource-card">
-          <h3>NA Just for Today</h3>
-          <p>Open NA's daily meditation page.</p>
-          <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.jftna.org'">
-              Open in App
-            </button>
-            <a class="secondary-button" href="https://www.jftna.org" target="_blank" rel="noopener noreferrer">
-              Open New Tab
-            </a>
-          </div>
-        </div>
+  <div class="button-list" id="readingLinks">
+    <div class="resource-card">
+      <h3>NA Just for Today</h3>
+      <p>Open NA's daily meditation page.</p>
 
-        <div class="resource-card">
-          <h3>AA Daily Reflections</h3>
-          <p>Open AA's Daily Reflections page.</p>
-          <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.aa.org/daily-reflections'">
-              Open in App
-            </button>
-            <a class="secondary-button" href="https://www.aa.org/daily-reflections" target="_blank" rel="noopener noreferrer">
-              Open New Tab
-            </a>
-          </div>
-        </div>
+      <div class="contact-actions">
+        <button
+          class="secondary-button"
+          type="button"
+          onclick="document.getElementById('readingFrame').src='https://www.jftna.org'"
+        >
+          Open in App
+        </button>
+
+        <a
+          class="secondary-button"
+          href="https://www.jftna.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open New Tab
+        </a>
       </div>
+    </div>
 
-      <div class="iframe-card">
-        <h3>Reading Window</h3>
-        <iframe
-          id="readingFrame"
-          title="Daily reading"
-          src="https://www.jftna.org"
-          loading="lazy"
-        ></iframe>
+    <div class="resource-card">
+      <h3>AA Daily Reflections</h3>
+      <p>Open AA's Daily Reflections page on the official AA website.</p>
+
+      <div class="contact-actions">
+        <a
+          class="secondary-button"
+          href="https://www.aa.org/daily-reflections"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open AA Daily Reflections
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
 
+  <div class="iframe-card">
+    <h3>Reading Window</h3>
+
+    <iframe
+      id="readingFrame"
+      title="Daily reading"
+      src="https://www.jftna.org"
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
     <section class="panel neon-panel hidden" data-view="library">
       <button class="back" data-go="home">← Back</button>
 
@@ -528,6 +542,29 @@
         </div>
 
         <div class="resource-card">
+          <div class="resource-card">
+  <h3>Recovery Dharma</h3>
+  <p>Recovery Dharma recovery literature.</p>
+
+  <div class="contact-actions">
+    <button
+      class="secondary-button"
+      type="button"
+      onclick="document.getElementById('literatureFrameTitle').textContent='Recovery Dharma'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview'"
+    >
+      Open in App
+    </button>
+
+    <a
+      class="secondary-button"
+      href="https://drive.google.com/file/d/1IlE32ZM0eg_ewjQ2QR7vXmfD7A2H6UMG/preview"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Open New Tab
+    </a>
+  </div>
+</div>
           <h3>AA Big Book, Fourth Edition</h3>
           <p>Alcoholics Anonymous Big Book, Fourth Edition.</p>
           <div class="contact-actions">
