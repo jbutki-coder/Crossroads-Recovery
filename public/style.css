@@ -749,5 +749,25 @@ iframe {
   .contact-actions button,
   .contact-actions a {
     width: 100%;
+
+    
+
+.home-icon {
+  padding: 0;
+  overflow: hidden;
+  font-size: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-button-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
   }
 }
