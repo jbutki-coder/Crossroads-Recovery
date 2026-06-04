@@ -6,22 +6,26 @@
   <title>Crossroads Recovery Community</title>
   <meta
     name="description"
-    content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, and Crossroads resources."
+    content="Recovery support, meeting finder, crisis help, daily readings, recovery capital planning, job search, client help, transportation, house rules, and Crossroads resources."
   />
 
-  <link rel="manifest" href="/manifest.json?v=1011" />
-  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1011" />
-  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1011" />
-  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1011" />
-  <link rel="stylesheet" href="/style.css?v=1011" />
+  <link rel="manifest" href="/manifest.json?v=1020" />
+  <link rel="icon" type="image/png" href="/assets/favicon.png?v=1020" />
+  <link rel="shortcut icon" type="image/png" href="/assets/favicon.png?v=1020" />
+  <link rel="apple-touch-icon" href="/assets/icon-192.png?v=1020" />
+  <link rel="stylesheet" href="/style.css?v=1020" />
 </head>
 
 <body>
   <div class="background-glow"></div>
 
   <header class="topbar glass">
-    <button class="icon-button home-icon" id="homeButton" aria-label="Home">C</button>
+    <button class="icon-button home-icon" id="homeButton" aria-label="Home">
+      <img src="/assets/crossroads-home-button.png?v=1020" alt="Home" class="home-button-image" />
+    </button>
+
     <img src="/assets/crossroads-logo.jpg" alt="Crossroads Recovery Community" class="logo" />
+
     <button class="icon-button menu-icon" id="menuButton" aria-label="Open menu">☰</button>
   </header>
 
@@ -37,7 +41,7 @@
 
         <p class="lead">
           Use this app to ask for help, submit a concern, find meetings, read recovery literature,
-          complete recovery capital planning, find local job leads, and connect with support.
+          complete recovery capital planning, find local job leads, review house rules, and connect with support.
         </p>
 
         <div class="hero-badge-row">
@@ -62,6 +66,21 @@
           <button class="tile recovery-capital" data-go="recoveryCapital">
             <span>Recovery Capital</span>
             <small>Scale &amp; Plan</small>
+          </button>
+
+          <button class="tile house-rules" data-go="houseRules">
+            <span>House Rules</span>
+            <small>Program expectations</small>
+          </button>
+
+          <button class="tile client-help" data-go="clientHelp">
+            <span>Client Help</span>
+            <small>Documents & benefits</small>
+          </button>
+
+          <button class="tile transportation" data-go="transportation">
+            <span>Transportation</span>
+            <small>BWROC & bus system</small>
           </button>
 
           <button class="tile jobs" data-go="jobs">
@@ -92,6 +111,16 @@
           <button class="tile contacts" data-go="contacts">
             <span>Contact Leadership</span>
             <small>Call or text support</small>
+          </button>
+
+          <button class="tile app-problem" data-go="appProblem">
+            <span>Report App Problem</span>
+            <small>Broken link or bug</small>
+          </button>
+
+          <button class="tile about" data-go="about">
+            <span>About This App</span>
+            <small>How it works</small>
           </button>
 
           <button
@@ -133,7 +162,7 @@
 
         <label>
           House / location
-          <input name="house" />
+          <input name="house" placeholder="Example: 924 Wall" />
         </label>
 
         <label>
@@ -162,6 +191,12 @@
         You do not have to enter your name. Please be honest and give leadership enough information
         to check on the situation carefully.
       </p>
+
+      <div class="disclaimer-card">
+        <strong>Privacy note:</strong>
+        Anonymous concerns are reviewed by leadership. If you choose not to leave your name, leadership may not be able to follow up with you directly.
+        Please do not submit false reports. If someone is in immediate danger, call 911.
+      </div>
 
       <form class="support-form" id="concernForm">
         <label>
@@ -370,6 +405,364 @@
       </form>
     </section>
 
+    <section class="panel neon-panel hidden" data-view="houseRules">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>House Rules &amp; Program Info</h2>
+
+      <p class="reassure">
+        Crossroads Recovery Community provides structured, peer-supported recovery housing focused on accountability,
+        stability, and long-term recovery. This page summarizes the resident intake packet, house rules, and program expectations.
+      </p>
+
+      <div class="resource-list house-rules-list">
+        <div class="resource-card house-rule-card">
+          <h3>Welcome to Crossroads</h3>
+          <p>
+            Welcome to Crossroads Recovery Community. We are glad you are here. At Crossroads, we come from a place
+            of love and grace. Many of us have stood where you are standing now. Our role is not simply to tell you what
+            to do, but to walk this road of recovery alongside you.
+          </p>
+          <p>You are not alone here. You are capable of change, and your recovery matters.</p>
+          <p><strong>Recovery Starts Here.</strong></p>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>Our Promise to You</h3>
+          <p>
+            At Crossroads Recovery Community, we promise to lead with love, grace, and honesty. We commit to walking
+            this recovery journey alongside you, not above you.
+          </p>
+          <ul>
+            <li>Provide a safe, structured recovery environment</li>
+            <li>Lead with consistency, fairness, and transparency</li>
+            <li>Hold you accountable with compassion and clarity</li>
+            <li>Support your growth while encouraging independence</li>
+            <li>Respect your voice, your effort, and your recovery process</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>Mission, Vision, and Values</h3>
+          <p><strong>Mission:</strong> To provide safe, structured recovery housing that supports personal accountability, peer connection, and long-term recovery.</p>
+          <p><strong>Vision:</strong> A community where individuals in recovery rebuild their lives with dignity, stability, and purpose.</p>
+          <p><strong>Core Values:</strong> Accountability, Respect, Honesty, Consistency, Peer Support, Growth.</p>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>Program Overview</h3>
+          <p>
+            Crossroads Recovery Community is a structured recovery housing program operating under peer-supported principles.
+            Each home houses approximately 5-9 residents and follows consistent guidelines and expectations.
+          </p>
+          <p>
+            The program supports residents in maintaining sobriety, establishing structure and routine, building life skills,
+            strengthening recovery supports, and preparing for independent living.
+          </p>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>1. Sobriety</h3>
+          <ul>
+            <li>Residents must remain alcohol- and drug-free at all times.</li>
+            <li>No possessing, using, selling, or bringing mind- or mood-altering substances into the house.</li>
+            <li>Random drug and alcohol testing may be conducted at any time.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>2. Daytime Expectations / Employment</h3>
+          <ul>
+            <li>Until employed, residents are required to be in the office from 9:00 AM to 3:00 PM unless attending treatment, school, or another approved activity.</li>
+            <li>Residents are expected to actively seek employment, education, or volunteer opportunities if not already working or in programming.</li>
+            <li>Once employed, residents must provide a work schedule when requested.</li>
+            <li>Sleeping, resting, watching TV, loitering, panhandling, unapproved travel, or spending extended time at community spaces without a recovery or employment purpose do not meet the requirement.</li>
+            <li>Approved meetings or appointments are limited to the duration of the meeting or appointment.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>3. SSI / Disability Daytime Expectations</h3>
+          <p>
+            Residents with documented disability status may be approved for modified daytime expectations. These modifications
+            do not remove accountability, but allow for reasonable accommodations consistent with recovery goals.
+          </p>
+          <ul>
+            <li>Medical, mental health, or therapy appointments</li>
+            <li>Approved recovery programming or peer-support groups</li>
+            <li>Independent life-skills development</li>
+            <li>Scheduled volunteering or approved community engagement</li>
+            <li>Educational classes, skill-building workshops, or vocational exploration</li>
+            <li>Rest periods as medically recommended and approved</li>
+          </ul>
+          <p>Documentation of SSI/SSDI or medical verification must be on file.</p>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>4. Visitors</h3>
+          <ul>
+            <li>No visitors are allowed inside the house.</li>
+            <li>No visitors are allowed in bedrooms at any time.</li>
+            <li>Residents may not bring or allow visitors who are under the influence.</li>
+            <li>Outside visitation concerns will be addressed by management case by case.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>5. Vehicle Rule</h3>
+          <ul>
+            <li>No vehicle is allowed for the first 60 days.</li>
+            <li>After 60 days, any vehicle must be approved by management.</li>
+            <li>Residents must provide a valid driver’s license, registration, and proof of insurance before a vehicle is permitted.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>6. Chain of Command</h3>
+          <p>If a resident has a problem, concern, request, or conflict, the chain of command is:</p>
+          <p><strong>House Manager → Jackson and/or Peer Coach → Angela → Sean</strong></p>
+          <p>Residents are expected to follow this chain of command unless there is an emergency or immediate safety issue.</p>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>7. Meetings, Sponsorship, and Service</h3>
+          <ul>
+            <li>Residents in all phases are required to attend recovery meetings.</li>
+            <li>Residents are required to obtain and work with a sponsor or mentor.</li>
+            <li>Residents are expected to be of service to the recovery fellowship they belong to.</li>
+            <li>House meetings are mandatory.</li>
+            <li>Daily morning meeting/meditation is required unless excused for work, treatment, or another approved reason.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>8. SSD Community Service Requirement</h3>
+          <ul>
+            <li>Any resident receiving SSD is required to participate in 20 hours of community service.</li>
+            <li>A list of approved community service activities will be provided.</li>
+            <li>Approved service locations may include soup kitchens, homeless shelters, Salvation Army, BWROC, Dry Dock Recovery Center, and other approved sites.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>9. Curfew</h3>
+          <ul>
+            <li>Curfew is 9:30 PM for the first 30 days.</li>
+            <li>After that, curfew is 11:00 PM unless otherwise directed by staff.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>10. Sign In / Sign Out</h3>
+          <ul>
+            <li>Residents must sign in and out whenever entering or leaving the house.</li>
+            <li>Staff should know each resident’s schedule and where they are expected to be.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>11. Respect and Conduct</h3>
+          <ul>
+            <li>No violence, threats, intimidation, harassment, or disruptive behavior.</li>
+            <li>No sexual harassment, hateful language, racial slurs, or discriminatory comments.</li>
+            <li>Residents are expected to treat staff, housemates, neighbors, and guests with respect at all times.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>12. House Cleanliness</h3>
+          <ul>
+            <li>Residents must keep bedrooms, bathrooms, and common areas clean.</li>
+            <li>Chores are assigned and must be completed daily.</li>
+            <li>No food or drinks are allowed in bedrooms.</li>
+            <li>Residents must clean up after themselves in the kitchen, bathrooms, and laundry area.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>13. Bedrooms and Personal Space</h3>
+          <ul>
+            <li>Residents must sleep in their assigned bed.</li>
+            <li>Residents are not allowed in another resident’s room.</li>
+            <li>Personal belongings and medications must be stored properly and kept secure.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>14. Smoking and Safety</h3>
+          <ul>
+            <li>No smoking inside the house.</li>
+            <li>Smoking is only permitted in designated areas.</li>
+            <li>No candles, incense, or other fire hazards are allowed.</li>
+            <li>Staff may conduct room and property checks to maintain safety and accountability.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>15. Legal and Behavioral Expectations</h3>
+          <ul>
+            <li>Residents must follow all laws and probation/parole requirements.</li>
+            <li>Theft, gambling, borrowing without permission, or criminal behavior may result in discharge.</li>
+            <li>Damage to house property may result in financial responsibility and possible termination.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>16. General Expectations</h3>
+          <ul>
+            <li>Residents are expected to contribute to a healthy, respectful, recovery-focused environment.</li>
+            <li>Failure to follow house rules may result in consequences up to and including discharge.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>17. Medications Policy</h3>
+          <ul>
+            <li>Residents must disclose all prescribed medications upon intake.</li>
+            <li>Residents must take medications only as prescribed.</li>
+            <li>Residents must secure medications as directed.</li>
+            <li>Residents must not share medications with others.</li>
+            <li>Misuse or diversion of medication may result in disciplinary action.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>18. Financial Responsibilities</h3>
+          <ul>
+            <li>Residents are responsible for weekly program fees as outlined upon intake.</li>
+          </ul>
+        </div>
+
+        <div class="resource-card house-rule-card">
+          <h3>Resident Acknowledgment</h3>
+          <p>
+            Residents acknowledge that the program is built on structure, accountability, peer support, and mutual respect.
+            Residents agree to participate fully, remain abstinent from alcohol and non-prescribed substances, respect staff and peers,
+            accept accountability and redirection, and communicate concerns appropriately and respectfully.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel neon-panel hidden" data-view="clientHelp">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>Client Help / Documents</h2>
+
+      <p class="fine-print">
+        Use this page as a starting point for common paperwork and life-stability needs.
+        Staff can help residents make a plan and follow through.
+      </p>
+
+      <div class="resource-list">
+        <div class="resource-card">
+          <h3>State ID</h3>
+          <p>Needed for jobs, benefits, housing, medical care, and most recovery-related paperwork.</p>
+          <p><strong>Start here:</strong> Michigan Secretary of State.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">Open SOS Website</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Birth Certificate</h3>
+          <p>Needed for ID, employment documents, and benefits. The process depends on the county and state where the resident was born.</p>
+          <p><strong>Staff note:</strong> Help resident identify birth county and required fee.</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Social Security Card</h3>
+          <p>Needed for employment and identity verification. Replacement cards can often be requested online or through Social Security.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://www.ssa.gov/number-card" target="_blank" rel="noopener noreferrer">SSA Card Help</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Medicaid / Insurance</h3>
+          <p>Residents may need help applying, renewing, or updating address/contact information.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://newmibridges.michigan.gov/" target="_blank" rel="noopener noreferrer">MI Bridges</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Food Assistance</h3>
+          <p>Apply for food benefits, update information, or check benefit status through MI Bridges.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://newmibridges.michigan.gov/" target="_blank" rel="noopener noreferrer">Open MI Bridges</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Resume Help</h3>
+          <p>Staff can help residents build a simple resume, list work history, identify skills, and prepare for applications.</p>
+          <p><strong>Bring:</strong> Work history, phone number, email, education level, certifications, and references if available.</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Michigan Works</h3>
+          <p>Employment support, job leads, training resources, and workforce services.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://www.michiganworks.org/" target="_blank" rel="noopener noreferrer">Michigan Works</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>MRS / Vocational Rehabilitation</h3>
+          <p>Michigan Rehabilitation Services may help eligible residents with employment planning, accommodations, training, and job support.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://www.michigan.gov/leo/bureaus-agencies/mrs" target="_blank" rel="noopener noreferrer">Open MRS</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Driver’s License / Secretary of State</h3>
+          <p>Help with license status, reinstatement steps, appointments, and required documents.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://www.michigan.gov/sos" target="_blank" rel="noopener noreferrer">Open SOS</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Probation / Parole Paperwork</h3>
+          <p>Residents should communicate requirements early and provide documentation when requested.</p>
+          <p><strong>Staff note:</strong> Help organize appointments, verification letters, schedules, and compliance documents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel neon-panel hidden" data-view="transportation">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>Transportation Help</h2>
+
+      <p class="fine-print">
+        Transportation options in Port Huron are limited. Use this page for local transportation resources that are actually available.
+      </p>
+
+      <div class="resource-list">
+        <div class="resource-card">
+          <h3>BWROC SUD Transportation</h3>
+          <p>Transportation support for substance-use-disorder related needs when available through BWROC.</p>
+          <p><strong>Best use:</strong> Recovery-related appointments, treatment-related transportation, and approved SUD support needs.</p>
+          <p><strong>Staff note:</strong> Confirm availability before promising a ride.</p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Blue Water Area Transit</h3>
+          <p>Local bus system for Port Huron and surrounding areas.</p>
+          <div class="contact-actions">
+            <a class="secondary-button" href="https://bwbus.com/" target="_blank" rel="noopener noreferrer">Open Bus Website</a>
+          </div>
+        </div>
+
+        <div class="resource-card">
+          <h3>Emergency Reminder</h3>
+          <p>Transportation resources are not emergency services. If someone is overdosing, violent, or in immediate danger, call 911.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="panel neon-panel hidden" data-view="jobs">
       <button class="back" data-go="home">← Back</button>
@@ -380,6 +773,10 @@
         Local job leads and classifieds. Listings are updated by Crossroads staff.
         Apply directly using the information below.
       </p>
+
+      <div class="job-category">
+        <h3>Manufacturing / Labor</h3>
+      </div>
 
       <div class="resource-list" id="jobListings">
         <div class="resource-card job-card">
@@ -400,6 +797,36 @@
         </div>
 
         <div class="resource-card job-card">
+          <h3>Pelzer</h3>
+          <p><strong>Location:</strong> Port Huron area</p>
+          <p><strong>Position:</strong> Manufacturing / production</p>
+          <p><strong>Pay:</strong> Add pay when confirmed</p>
+          <p><strong>Shift:</strong> Add shift when confirmed</p>
+          <p><strong>Notes:</strong> Local manufacturing lead. Update this card with current hiring details.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" disabled>Details Needed</button>
+          </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>IAC</h3>
+          <p><strong>Location:</strong> Port Huron area</p>
+          <p><strong>Position:</strong> Manufacturing / automotive production</p>
+          <p><strong>Pay:</strong> Add pay when confirmed</p>
+          <p><strong>Shift:</strong> Add shift when confirmed</p>
+          <p><strong>Notes:</strong> Local manufacturing lead. Update this card with current hiring details.</p>
+
+          <div class="contact-actions">
+            <button class="secondary-button" type="button" disabled>Details Needed</button>
+          </div>
+        </div>
+
+        <div class="job-category">
+          <h3>Food Service / Entry Level</h3>
+        </div>
+
+        <div class="resource-card job-card">
           <h3>Olive Garden</h3>
           <p><strong>Location:</strong> Port Huron / Fort Gratiot area</p>
           <p><strong>Position:</strong> Restaurant positions</p>
@@ -411,6 +838,22 @@
           <div class="contact-actions">
             <a class="secondary-button" href="https://jobs.olivegarden.com" target="_blank" rel="noopener noreferrer">Apply Online</a>
           </div>
+        </div>
+
+        <div class="resource-card job-card">
+          <h3>Chef Shell's Restaurant &amp; Catering</h3>
+          <p><strong>Location:</strong> Port Huron, MI</p>
+          <p><strong>Positions:</strong> Overnight baker, donut delivery driver, waitstaff, cook / cold side prep</p>
+          <p><strong>Apply:</strong> Email resume or come in to fill out an application</p>
+          <p><strong>Email:</strong> info@chefshells.com</p>
+
+          <div class="contact-actions">
+            <a class="secondary-button" href="mailto:info@chefshells.com">Email Resume</a>
+          </div>
+        </div>
+
+        <div class="job-category">
+          <h3>Recovery Friendly / Community</h3>
         </div>
 
         <div class="resource-card job-card">
@@ -440,42 +883,8 @@
           </div>
         </div>
 
-        <div class="resource-card job-card">
-          <h3>Chef Shell's Restaurant &amp; Catering</h3>
-          <p><strong>Location:</strong> Port Huron, MI</p>
-          <p><strong>Positions:</strong> Overnight baker, donut delivery driver, waitstaff, cook / cold side prep</p>
-          <p><strong>Apply:</strong> Email resume or come in to fill out an application</p>
-          <p><strong>Email:</strong> info@chefshells.com</p>
-
-          <div class="contact-actions">
-            <a class="secondary-button" href="mailto:info@chefshells.com">Email Resume</a>
-          </div>
-        </div>
-
-        <div class="resource-card job-card">
-          <h3>Pelzer</h3>
-          <p><strong>Location:</strong> Port Huron area</p>
-          <p><strong>Position:</strong> Manufacturing / production</p>
-          <p><strong>Pay:</strong> Add pay when confirmed</p>
-          <p><strong>Shift:</strong> Add shift when confirmed</p>
-          <p><strong>Notes:</strong> Local manufacturing lead. Update this card with current hiring details.</p>
-
-          <div class="contact-actions">
-            <button class="secondary-button" type="button" disabled>Details Needed</button>
-          </div>
-        </div>
-
-        <div class="resource-card job-card">
-          <h3>IAC</h3>
-          <p><strong>Location:</strong> Port Huron area</p>
-          <p><strong>Position:</strong> Manufacturing / automotive production</p>
-          <p><strong>Pay:</strong> Add pay when confirmed</p>
-          <p><strong>Shift:</strong> Add shift when confirmed</p>
-          <p><strong>Notes:</strong> Local manufacturing lead. Update this card with current hiring details.</p>
-
-          <div class="contact-actions">
-            <button class="secondary-button" type="button" disabled>Details Needed</button>
-          </div>
+        <div class="job-category">
+          <h3>Out-of-State / Special Opportunity</h3>
         </div>
 
         <div class="resource-card job-card">
@@ -581,19 +990,30 @@
       <h2>Daily Readings</h2>
 
       <p class="fine-print">
-        Use the buttons below to open recovery readings. Some fellowship websites may block embedded viewing,
-        so each reading also has an open-new-tab button.
+        Use the buttons below to open recovery readings. Some fellowship websites block embedded viewing,
+        so AA Daily Reflections opens in a new tab.
       </p>
 
       <div class="button-list" id="readingLinks">
         <div class="resource-card">
           <h3>NA Just for Today</h3>
           <p>Open NA's daily meditation page.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.jftna.org'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('readingFrame').src='https://www.jftna.org'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://www.jftna.org" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://www.jftna.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -601,13 +1021,16 @@
 
         <div class="resource-card">
           <h3>AA Daily Reflections</h3>
-          <p>Open AA's Daily Reflections page.</p>
+          <p>Open AA's Daily Reflections page on the official AA website.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('readingFrame').src='https://www.aa.org/daily-reflections'">
-              Open in App
-            </button>
-            <a class="secondary-button" href="https://www.aa.org/daily-reflections" target="_blank" rel="noopener noreferrer">
-              Open New Tab
+            <a
+              class="secondary-button"
+              href="https://www.aa.org/daily-reflections"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open AA Daily Reflections
             </a>
           </div>
         </div>
@@ -615,6 +1038,7 @@
 
       <div class="iframe-card">
         <h3>Reading Window</h3>
+
         <iframe
           id="readingFrame"
           title="Daily reading"
@@ -637,11 +1061,22 @@
         <div class="resource-card">
           <h3>NA Basic Text</h3>
           <p>Narcotics Anonymous Basic Text.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='NA Basic Text'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='NA Basic Text'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1Mlz5-WcRS_FZa7fOZ7UGJh8xCDmiwHMq/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -650,17 +1085,26 @@
         <div class="resource-card">
           <h3>Basic Text Study Guide for 6th Edition</h3>
           <p>NA Basic Text study guide for the 6th Edition.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='Basic Text Study Guide for 6th Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='Basic Text Study Guide for 6th Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1yd12M9gn75binpfEaquX7yumMtnPk6bk/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
         </div>
-
-
 
         <div class="resource-card">
           <h3>Recovery Dharma</h3>
@@ -689,11 +1133,22 @@
         <div class="resource-card">
           <h3>AA Big Book, Fourth Edition</h3>
           <p>Alcoholics Anonymous Big Book, Fourth Edition.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='AA Big Book, Fourth Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='AA Big Book, Fourth Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1fBsqx0-PlPeELuZPPsVBppjVGCbTLZI6/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -702,11 +1157,22 @@
         <div class="resource-card">
           <h3>Adult Children of Alcoholics</h3>
           <p>Adult Children of Alcoholics recovery literature.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='Adult Children of Alcoholics'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='Adult Children of Alcoholics'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1w63Sszox-D3ayLR1NpyL9SOk-Ac90gra/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -715,11 +1181,22 @@
         <div class="resource-card">
           <h3>ACA Twelve Steps Workbook</h3>
           <p>Adult Children of Alcoholics Twelve Steps Workbook.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='ACA Twelve Steps Workbook'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='ACA Twelve Steps Workbook'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1MMm7vAjt2i95w_4r3lKnsJp5lJyDwPA2/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -728,11 +1205,22 @@
         <div class="resource-card">
           <h3>CoDA Blue Book, Pocket Edition</h3>
           <p>Co-Dependents Anonymous Blue Book, Pocket Edition.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='CoDA Blue Book, Pocket Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='CoDA Blue Book, Pocket Edition'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1eVfCJRzyOuZMDaXd0J7MLbvSX_XbeIv7/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -741,11 +1229,22 @@
         <div class="resource-card">
           <h3>SMART Recovery Handbook</h3>
           <p>SMART Recovery Handbook.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='SMART Recovery Handbook'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='SMART Recovery Handbook'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/17gAxh9ESvky5yKq462p86ddZB5elKH5D/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -754,11 +1253,22 @@
         <div class="resource-card">
           <h3>Living Clean: The Journey Continues</h3>
           <p>Narcotics Anonymous Living Clean: The Journey Continues.</p>
+
           <div class="contact-actions">
-            <button class="secondary-button" type="button" onclick="document.getElementById('literatureFrameTitle').textContent='Living Clean: The Journey Continues'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview'">
+            <button
+              class="secondary-button"
+              type="button"
+              onclick="document.getElementById('literatureFrameTitle').textContent='Living Clean: The Journey Continues'; document.getElementById('literatureFrame').src='https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview'"
+            >
               Open in App
             </button>
-            <a class="secondary-button" href="https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="secondary-button"
+              href="https://drive.google.com/file/d/1E2k2KTAA_V40jGkJMRWXCW8vjjHMmikF/preview"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Open New Tab
             </a>
           </div>
@@ -777,6 +1287,103 @@
           allow="autoplay"
           loading="lazy"
         ></iframe>
+      </div>
+    </section>
+
+    <section class="panel neon-panel hidden" data-view="appProblem">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>Report App Problem</h2>
+
+      <p class="fine-print">
+        Use this form if a page, button, phone number, book link, job lead, or meeting link is not working correctly.
+      </p>
+
+      <form class="support-form" id="appProblemForm">
+        <label>
+          What page had the problem?
+          <select name="page" required>
+            <option value="">Choose one</option>
+            <option>Home</option>
+            <option>I Relapsed</option>
+            <option>Submit a Concern</option>
+            <option>Recovery Capital</option>
+            <option>House Rules</option>
+            <option>Client Help</option>
+            <option>Transportation</option>
+            <option>Job Search</option>
+            <option>Meetings</option>
+            <option>Daily Readings</option>
+            <option>Recovery Library</option>
+            <option>Contact Leadership</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>
+          What happened?
+          <textarea name="problem" rows="5" required></textarea>
+        </label>
+
+        <label>
+          Your name <span>optional</span>
+          <input name="name" />
+        </label>
+
+        <label>
+          Contact info <span>optional</span>
+          <input name="contact" />
+        </label>
+
+        <button type="submit" class="primary">Send App Problem Report</button>
+      </form>
+    </section>
+
+    <section class="panel neon-panel hidden" data-view="about">
+      <button class="back" data-go="home">← Back</button>
+
+      <h2>About This App</h2>
+
+      <div class="resource-list">
+        <div class="resource-card">
+          <h3>What this app is for</h3>
+          <p>
+            This app gives Crossroads residents quick access to recovery help, meeting finders, literature,
+            recovery planning, job leads, house rules, document help, transportation information, and leadership contact options.
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Emergency disclaimer</h3>
+          <p>
+            This app is not an emergency service. If someone is overdosing, violent, suicidal, seriously injured,
+            or in immediate danger, call 911.
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Anonymous concerns</h3>
+          <p>
+            Anonymous concerns are reviewed by leadership. If no name or contact information is provided,
+            leadership may not be able to follow up directly. False reports can harm the recovery community.
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Relapse help requests</h3>
+          <p>
+            Submitting a relapse help request does not guarantee an immediate response. Residents should also call
+            support numbers directly when immediate help is needed.
+          </p>
+        </div>
+
+        <div class="resource-card">
+          <h3>Leadership login</h3>
+          <p>
+            Leadership uses Formspree to review concern reports, relapse help requests, recovery capital submissions,
+            and app problem reports.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -852,151 +1459,6 @@
 
   <div class="toast hidden" id="toast"></div>
 
-  <script src="/app.js?v=1011"></script>
-
-  <script>
-    const CRC_RECOVERY_CAPITAL_QUESTIONS = [
-      "I have the financial resources to provide for myself and my family.",
-      "I have personal transportation or access to public transportation.",
-      "I live in a home and neighborhood that is safe and secure.",
-      "I live in an environment free from alcohol and other drugs.",
-      "I have an intimate partner supportive of my recovery process.",
-      "I have family members who are supportive of my recovery process.",
-      "I have friends who are supportive of my recovery process.",
-      "I have people close to me who are also in recovery.",
-      "I have a stable job that I enjoy and that provides for my basic necessities.",
-      "I have an education or work environment that is conducive to my long-term recovery.",
-      "I continue to participate in a continuing care program of an addiction treatment program.",
-      "I have a professional assistance program that is monitoring and supporting my recovery process.",
-      "I have a primary care physician who attends to my health problems.",
-      "I am now in reasonably good health.",
-      "I have an active plan to manage any lingering or potential health problems.",
-      "I am on prescribed medication that minimizes my obsession or urges to use alcohol and other drugs.",
-      "I have insurance that will allow me to receive help for major health problems.",
-      "I have access to regular, nutritious meals.",
-      "I have clothes that are comfortable, clean, and conducive to my recovery activities.",
-      "I have access to recovery support groups in my local community.",
-      "I have established close affiliation with a local recovery support group.",
-      "I have a sponsor or equivalent who serves as a special mentor related to my recovery.",
-      "I have access to online recovery support groups.",
-      "I have completed or am complying with all legal requirements related to my past.",
-      "There are other people who rely on me to support their own recoveries.",
-      "My immediate physical environment contains literature, tokens, posters, or other symbols of my commitment to recovery.",
-      "I have recovery rituals that are now part of my daily life.",
-      "I had a profound experience that marked the beginning or deepening of my commitment to recovery.",
-      "I now have goals and great hopes for my future.",
-      "I have problem-solving skills and resources that I lacked during my years of active addiction.",
-      "I feel like I have meaningful, positive participation in my family and community.",
-      "Today I have a clear sense of who I am.",
-      "I know that my life has a purpose.",
-      "Service to others is now an important part of my life.",
-      "My personal values and sense of right and wrong have become clearer and stronger in recent years."
-    ];
-
-    function crcRenderRecoveryCapitalFallback() {
-      const container = document.getElementById("recoveryCapitalQuestions");
-      if (!container || container.children.length > 0) return;
-
-      CRC_RECOVERY_CAPITAL_QUESTIONS.forEach((question, index) => {
-        const itemNumber = index + 1;
-
-        const card = document.createElement("div");
-        card.className = "question-card";
-
-        const title = document.createElement("h4");
-        title.textContent = itemNumber + ". " + question;
-
-        const scaleRow = document.createElement("div");
-        scaleRow.className = "scale-row";
-
-        for (let score = 0; score <= 5; score++) {
-          const label = document.createElement("label");
-          label.className = "scale-option";
-
-          const input = document.createElement("input");
-          input.type = "radio";
-          input.name = "rc_item_" + itemNumber;
-          input.value = String(score);
-          input.required = true;
-
-          input.addEventListener("change", crcUpdateRecoveryCapitalFallbackScore);
-
-          const number = document.createElement("span");
-          number.textContent = String(score);
-
-          label.appendChild(input);
-          label.appendChild(number);
-          scaleRow.appendChild(label);
-        }
-
-        card.appendChild(title);
-        card.appendChild(scaleRow);
-        container.appendChild(card);
-      });
-    }
-
-    function crcUpdateRecoveryCapitalFallbackScore() {
-      let total = 0;
-      const answered = [];
-
-      CRC_RECOVERY_CAPITAL_QUESTIONS.forEach((question, index) => {
-        const itemNumber = index + 1;
-        const selected = document.querySelector("input[name='rc_item_" + itemNumber + "']:checked");
-
-        if (selected) {
-          const score = Number(selected.value);
-          total += score;
-
-          answered.push({
-            itemNumber,
-            question,
-            score
-          });
-        }
-      });
-
-      const scoreDisplay = document.getElementById("recoveryCapitalScore");
-      const totalInput = document.getElementById("totalScoreInput");
-      const lowestInput = document.getElementById("lowestItemsInput");
-      const highestInput = document.getElementById("highestItemsInput");
-      const lowestDisplay = document.getElementById("lowestItemsDisplay");
-      const highestDisplay = document.getElementById("highestItemsDisplay");
-
-      if (scoreDisplay) scoreDisplay.textContent = String(total);
-      if (totalInput) totalInput.value = String(total);
-
-      if (answered.length === 0) return;
-
-      const lowest = [...answered]
-        .sort((a, b) => a.score - b.score)
-        .slice(0, 5)
-        .map((item) => "#" + item.itemNumber + " (" + item.score + ") " + item.question);
-
-      const highest = [...answered]
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 5)
-        .map((item) => "#" + item.itemNumber + " (" + item.score + ") " + item.question);
-
-      if (lowestInput) lowestInput.value = lowest.join(" | ");
-      if (highestInput) highestInput.value = highest.join(" | ");
-      if (lowestDisplay) lowestDisplay.textContent = lowest.join("; ");
-      if (highestDisplay) highestDisplay.textContent = highest.join("; ");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      crcRenderRecoveryCapitalFallback();
-
-      const recoveryCapitalButton = document.querySelector("[data-go='recoveryCapital']");
-      if (recoveryCapitalButton) {
-        recoveryCapitalButton.addEventListener("click", () => {
-          setTimeout(crcRenderRecoveryCapitalFallback, 100);
-        });
-      }
-    });
-
-    window.addEventListener("load", () => {
-      crcRenderRecoveryCapitalFallback();
-    });
-  </script>
+  <script src="/app.js?v=1020"></script>
 </body>
 </html>
