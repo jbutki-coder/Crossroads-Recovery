@@ -67,6 +67,7 @@ async function initApp() {
     bindConcernForm(settings);
     bindRelapseForm(settings);
     bindRecoveryCapitalForm(settings);
+    bindClientHelpForm(settings);
     bindAppProblemForm(settings);
     bindAdminLogin(settings);
   } catch (error) {
@@ -94,7 +95,9 @@ function bindNavigation() {
   if (menuButton) {
     menuButton.addEventListener("click", () => {
       const bottomNav = document.querySelector(".bottom-nav");
-      if (bottomNav) bottomNav.classList.toggle("nav-open");
+      if (bottomNav) {
+        bottomNav.classList.toggle("nav-open");
+      }
     });
   }
 }
@@ -142,9 +145,11 @@ function renderCrisisButtons(settings) {
     const callButton = document.createElement("button");
     callButton.type = "button";
     callButton.className = "secondary-button";
-    callButton.textContent = `Call ${formatPhone(cleanPhone)}`;
+    callButton.textContent = cleanPhone ? `Call ${formatPhone(cleanPhone)}` : "Call";
     callButton.addEventListener("click", () => {
-      window.location.href = `tel:${cleanPhone}`;
+      if (cleanPhone) {
+        window.location.href = `tel:${cleanPhone}`;
+      }
     });
 
     actions.appendChild(callButton);
@@ -153,34 +158,6 @@ function renderCrisisButtons(settings) {
     card.appendChild(actions);
     crisisButtons.appendChild(card);
   });
-
-function bindClientHelpForm(settings) {
-  const form = document.getElementById("clientHelpForm");
-  if (!form) return;
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const endpoint = settings?.forms?.clientHelpEndpoint || settings?.forms?.concernEndpoint;
-
-    if (!endpoint) {
-      submitByEmailFallback(form, settings, "Crossroads Client Help Request");
-      return;
-    }
-
-    const formData = new FormData(form);
-    formData.append("submissionType", "Client Help / Document Request");
-    formData.append("source", "Crossroads Recovery App");
-
-    await submitFormspreeForm(
-      form,
-      endpoint,
-      formData,
-      "Client help request submitted. Staff has received it."
-    );
-  });
-}
-
 }
 
 function renderRecoveryCapitalQuestions() {
@@ -360,6 +337,28 @@ function bindRecoveryCapitalForm(settings) {
   });
 }
 
+function bindClientHelpForm(settings) {
+  const form = document.getElementById("clientHelpForm");
+  if (!form) return;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const endpoint = settings?.forms?.clientHelpEndpoint || settings?.forms?.concernEndpoint;
+
+    if (!endpoint) {
+      submitByEmailFallback(form, settings, "Crossroads Client Help Request");
+      return;
+    }
+
+    const formData = new FormData(form);
+    formData.append("submissionType", "Client Help / Document Request");
+    formData.append("source", "Crossroads Recovery App");
+
+    await submitFormspreeForm(form, endpoint, formData, "Client help request submitted. Staff has received it.");
+  });
+}
+
 function bindAppProblemForm(settings) {
   const form = document.getElementById("appProblemForm");
   if (!form) return;
@@ -405,7 +404,9 @@ async function submitFormspreeForm(form, endpoint, formData, successMessage) {
     const response = await fetch(endpoint, {
       method: "POST",
       body: formData,
-      headers: { Accept: "application/json" }
+      headers: {
+        Accept: "application/json"
+      }
     });
 
     if (!response.ok) {
@@ -415,6 +416,7 @@ async function submitFormspreeForm(form, endpoint, formData, successMessage) {
     form.reset();
 
     if (form.id === "recoveryCapitalForm") {
+      clearRecoveryCapitalAnswers();
       updateRecoveryCapitalScore();
       setTodayDate();
     }
@@ -429,6 +431,14 @@ async function submitFormspreeForm(form, endpoint, formData, successMessage) {
       submitButton.textContent = originalButtonText;
     }
   }
+}
+
+function clearRecoveryCapitalAnswers() {
+  const selectedAnswers = document.querySelectorAll("#recoveryCapitalQuestions input[type='radio']:checked");
+
+  selectedAnswers.forEach((input) => {
+    input.checked = false;
+  });
 }
 
 function submitByEmailFallback(form, settings, subject) {
