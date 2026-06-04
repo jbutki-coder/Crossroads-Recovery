@@ -153,6 +153,34 @@ function renderCrisisButtons(settings) {
     card.appendChild(actions);
     crisisButtons.appendChild(card);
   });
+
+function bindClientHelpForm(settings) {
+  const form = document.getElementById("clientHelpForm");
+  if (!form) return;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const endpoint = settings?.forms?.clientHelpEndpoint || settings?.forms?.concernEndpoint;
+
+    if (!endpoint) {
+      submitByEmailFallback(form, settings, "Crossroads Client Help Request");
+      return;
+    }
+
+    const formData = new FormData(form);
+    formData.append("submissionType", "Client Help / Document Request");
+    formData.append("source", "Crossroads Recovery App");
+
+    await submitFormspreeForm(
+      form,
+      endpoint,
+      formData,
+      "Client help request submitted. Staff has received it."
+    );
+  });
+}
+
 }
 
 function renderRecoveryCapitalQuestions() {
