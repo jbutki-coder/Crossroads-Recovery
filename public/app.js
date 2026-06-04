@@ -3,7 +3,7 @@ const APP_STATE = {
   currentView: "home"
 };
 
-const SETTINGS_URL = "/data/settings.json?v=1010";
+const SETTINGS_URL = "/data/settings.json?v=1020";
 
 const RECOVERY_CAPITAL_QUESTIONS = [
   "I have the financial resources to provide for myself and my family.",
@@ -50,11 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
 async function initApp() {
   bindNavigation();
   setTodayDate();
+  renderRecoveryCapitalQuestions();
 
   try {
-    const response = await fetch(SETTINGS_URL, {
-      cache: "no-store"
-    });
+    const response = await fetch(SETTINGS_URL, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error("Could not load settings.json");
@@ -64,15 +63,11 @@ async function initApp() {
     APP_STATE.settings = settings;
 
     renderCrisisButtons(settings);
-    renderMeetings(settings);
-    renderReadings(settings);
-    renderLiterature(settings);
-    renderContacts(settings);
-    renderRecoveryCapitalQuestions();
 
     bindConcernForm(settings);
     bindRelapseForm(settings);
     bindRecoveryCapitalForm(settings);
+    bindAppProblemForm(settings);
     bindAdminLogin(settings);
   } catch (error) {
     console.error(error);
@@ -99,9 +94,7 @@ function bindNavigation() {
   if (menuButton) {
     menuButton.addEventListener("click", () => {
       const bottomNav = document.querySelector(".bottom-nav");
-      if (bottomNav) {
-        bottomNav.classList.toggle("nav-open");
-      }
+      if (bottomNav) bottomNav.classList.toggle("nav-open");
     });
   }
 }
@@ -146,252 +139,25 @@ function renderCrisisButtons(settings) {
     const actions = document.createElement("div");
     actions.className = "contact-actions";
 
-    const callButton = document.createElement("a");
+    const callButton = document.createElement("button");
+    callButton.type = "button";
     callButton.className = "secondary-button";
-    callButton.href = `tel:${cleanPhone}`;
     callButton.textContent = `Call ${formatPhone(cleanPhone)}`;
+    callButton.addEventListener("click", () => {
+      window.location.href = `tel:${cleanPhone}`;
+    });
 
     actions.appendChild(callButton);
-
     card.appendChild(title);
     card.appendChild(description);
     card.appendChild(actions);
-
     crisisButtons.appendChild(card);
-  });
-}
-
-function renderMeetings(settings) {
-  const meetingLinks = document.getElementById("meetingLinks");
-  const meetingFrame = document.getElementById("meetingFrame");
-
-  if (meetingLinks && Array.isArray(settings.meetings)) {
-    meetingLinks.innerHTML = "";
-
-    settings.meetings.forEach((item) => {
-      const card = document.createElement("div");
-      card.className = "resource-card";
-
-      const title = document.createElement("h3");
-      title.textContent = item.name || "Meeting Link";
-
-      const description = document.createElement("p");
-      description.textContent = item.description || "";
-
-      const button = document.createElement("a");
-      button.className = "secondary-button";
-      button.href = item.url || "#";
-      button.target = "_blank";
-      button.rel = "noopener noreferrer";
-      button.textContent = "Open Meeting Finder";
-
-      card.appendChild(title);
-      card.appendChild(description);
-      card.appendChild(button);
-
-      meetingLinks.appendChild(card);
-    });
-  }
-
-  if (meetingFrame && settings.meetingEmbedUrl) {
-    meetingFrame.src = settings.meetingEmbedUrl;
-
-    meetingFrame.addEventListener("load", () => {
-      meetingFrame.classList.add("loaded");
-    });
-  }
-}
-
-function renderReadings(settings) {
-  const readingLinks = document.getElementById("readingLinks");
-  const readingFrame = document.getElementById("readingFrame");
-
-  if (!readingLinks || !Array.isArray(settings.readings)) return;
-
-  readingLinks.innerHTML = "";
-
-  settings.readings.forEach((item, index) => {
-    const card = document.createElement("div");
-    card.className = "resource-card";
-
-    const title = document.createElement("h3");
-    title.textContent = item.name || "Daily Reading";
-
-    const description = document.createElement("p");
-    description.textContent = item.description || "";
-
-    const openInApp = document.createElement("button");
-    openInApp.className = "secondary-button";
-    openInApp.type = "button";
-    openInApp.textContent = "Open in App";
-
-    openInApp.addEventListener("click", () => {
-      if (readingFrame) {
-        readingFrame.src = item.url;
-        readingFrame.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
-
-    const openNewTab = document.createElement("a");
-    openNewTab.className = "secondary-button";
-    openNewTab.href = item.url || "#";
-    openNewTab.target = "_blank";
-    openNewTab.rel = "noopener noreferrer";
-    openNewTab.textContent = "Open New Tab";
-
-    const actions = document.createElement("div");
-    actions.className = "contact-actions";
-    actions.appendChild(openInApp);
-    actions.appendChild(openNewTab);
-
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(actions);
-
-    readingLinks.appendChild(card);
-
-    if (index === 0 && readingFrame && item.url) {
-      readingFrame.src = item.url;
-    }
-  });
-}
-
-function renderLiterature(settings) {
-  const literatureLinks = document.getElementById("literatureLinks");
-  const literatureFrame = document.getElementById("literatureFrame");
-  const literatureFrameTitle = document.getElementById("literatureFrameTitle");
-
-  if (!literatureLinks || !Array.isArray(settings.literature)) return;
-
-  literatureLinks.innerHTML = "";
-
-  settings.literature.forEach((item, index) => {
-    const card = document.createElement("div");
-    card.className = "resource-card literature-card";
-
-    const title = document.createElement("h3");
-    title.textContent = item.name || "Recovery Literature";
-
-    const description = document.createElement("p");
-    description.textContent = item.description || "";
-
-    const actions = document.createElement("div");
-    actions.className = "contact-actions";
-
-    const openInApp = document.createElement("button");
-    openInApp.className = "secondary-button";
-    openInApp.type = "button";
-    openInApp.textContent = "Open in App";
-
-    openInApp.addEventListener("click", () => {
-      const previewUrl = toDrivePreviewUrl(item.url);
-
-      if (literatureFrame) {
-        literatureFrame.src = previewUrl;
-      }
-
-      if (literatureFrameTitle) {
-        literatureFrameTitle.textContent = item.name || "Recovery Literature Viewer";
-      }
-
-      if (literatureFrame) {
-        literatureFrame.scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-      }
-    });
-
-    const openNewTab = document.createElement("a");
-    openNewTab.className = "secondary-button";
-    openNewTab.href = item.url || "#";
-    openNewTab.target = "_blank";
-    openNewTab.rel = "noopener noreferrer";
-    openNewTab.textContent = "Open New Tab";
-
-    actions.appendChild(openInApp);
-    actions.appendChild(openNewTab);
-
-    card.appendChild(title);
-    card.appendChild(description);
-    card.appendChild(actions);
-
-    literatureLinks.appendChild(card);
-
-    if (index === 0 && literatureFrame && item.url) {
-      literatureFrame.src = toDrivePreviewUrl(item.url);
-
-      if (literatureFrameTitle) {
-        literatureFrameTitle.textContent = item.name || "Recovery Literature Viewer";
-      }
-    }
-  });
-}
-
-function renderContacts(settings) {
-  const contactLinks = document.getElementById("contactLinks");
-  if (!contactLinks || !Array.isArray(settings.contacts)) return;
-
-  contactLinks.innerHTML = "";
-
-  settings.contacts.forEach((contact) => {
-    const card = document.createElement("div");
-    card.className = "contact-card";
-
-    const title = document.createElement("h3");
-    title.textContent = contact.name || "Leadership";
-
-    const role = document.createElement("span");
-    role.className = "contact-role";
-    role.textContent = contact.role || "Leadership";
-
-    const phoneDisplay = document.createElement("span");
-    phoneDisplay.className = "contact-phone";
-
-    const cleanPhone = cleanPhoneNumber(contact.phone);
-
-    if (cleanPhone) {
-      phoneDisplay.textContent = formatPhone(cleanPhone);
-    } else {
-      phoneDisplay.textContent = "Add phone number in data/settings.json";
-    }
-
-    card.appendChild(title);
-    card.appendChild(role);
-    card.appendChild(phoneDisplay);
-
-    if (cleanPhone) {
-      const actions = document.createElement("div");
-      actions.className = "contact-actions";
-
-      const call = document.createElement("a");
-      call.href = `tel:${cleanPhone}`;
-      call.textContent = "Call";
-      call.className = "secondary-button";
-
-      const text = document.createElement("a");
-      text.href = `sms:${cleanPhone}`;
-      text.textContent = "Text";
-      text.className = "secondary-button";
-
-      actions.appendChild(call);
-      actions.appendChild(text);
-
-      card.appendChild(actions);
-    }
-
-    contactLinks.appendChild(card);
   });
 }
 
 function renderRecoveryCapitalQuestions() {
   const container = document.getElementById("recoveryCapitalQuestions");
-  if (!container) return;
-
-  container.innerHTML = "";
+  if (!container || container.children.length > 0) return;
 
   RECOVERY_CAPITAL_QUESTIONS.forEach((question, index) => {
     const itemNumber = index + 1;
@@ -434,7 +200,6 @@ function renderRecoveryCapitalQuestions() {
 function updateRecoveryCapitalScore() {
   const answers = getRecoveryCapitalAnswers();
   const answeredOnly = answers.filter((answer) => answer.answered);
-
   const total = answeredOnly.reduce((sum, answer) => sum + answer.score, 0);
 
   const scoreDisplay = document.getElementById("recoveryCapitalScore");
@@ -556,10 +321,7 @@ function bindRecoveryCapitalForm(settings) {
     const formData = new FormData(form);
 
     answers.forEach((answer) => {
-      formData.append(
-        `Item ${answer.itemNumber}`,
-        `${answer.score} - ${answer.question}`
-      );
+      formData.append(`Item ${answer.itemNumber}`, `${answer.score} - ${answer.question}`);
     });
 
     formData.append("submissionType", "Recovery Capital Scale and Plan");
@@ -567,6 +329,28 @@ function bindRecoveryCapitalForm(settings) {
     formData.append("possibleScore", "175");
 
     await submitFormspreeForm(form, endpoint, formData, "Recovery Capital Scale & Plan submitted.");
+  });
+}
+
+function bindAppProblemForm(settings) {
+  const form = document.getElementById("appProblemForm");
+  if (!form) return;
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const endpoint = settings?.forms?.appProblemEndpoint || settings?.forms?.concernEndpoint;
+
+    if (!endpoint) {
+      submitByEmailFallback(form, settings, "Crossroads App Problem Report");
+      return;
+    }
+
+    const formData = new FormData(form);
+    formData.append("submissionType", "App Problem Report");
+    formData.append("source", "Crossroads Recovery App");
+
+    await submitFormspreeForm(form, endpoint, formData, "App problem report submitted.");
   });
 }
 
@@ -593,9 +377,7 @@ async function submitFormspreeForm(form, endpoint, formData, successMessage) {
     const response = await fetch(endpoint, {
       method: "POST",
       body: formData,
-      headers: {
-        Accept: "application/json"
-      }
+      headers: { Accept: "application/json" }
     });
 
     if (!response.ok) {
@@ -624,7 +406,6 @@ async function submitFormspreeForm(form, endpoint, formData, successMessage) {
 function submitByEmailFallback(form, settings, subject) {
   const fallbackEmail = settings?.forms?.fallbackEmail || "leadership@example.com";
   const formData = new FormData(form);
-
   const lines = [];
 
   formData.forEach((value, key) => {
@@ -635,19 +416,6 @@ function submitByEmailFallback(form, settings, subject) {
   const encodedSubject = encodeURIComponent(subject);
 
   window.location.href = `mailto:${fallbackEmail}?subject=${encodedSubject}&body=${body}`;
-}
-
-function toDrivePreviewUrl(url) {
-  if (!url) return "";
-
-  if (url.includes("drive.google.com/file/d/")) {
-    const match = url.match(/\/file\/d\/([^/]+)/);
-    if (match && match[1]) {
-      return `https://drive.google.com/file/d/${match[1]}/preview`;
-    }
-  }
-
-  return url;
 }
 
 function cleanPhoneNumber(phone) {
