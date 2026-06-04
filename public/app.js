@@ -3,7 +3,7 @@ const APP_STATE = {
   currentView: "home"
 };
 
-const SETTINGS_URL = "/data/settings.json?v=1022";
+const SETTINGS_URL = "/data/settings.json?v=1023";
 
 const RECOVERY_CAPITAL_QUESTIONS = [
   "I have the financial resources to provide for myself and my family.",
